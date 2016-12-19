@@ -1,0 +1,20 @@
+{
+  "name": "hearthstone-deck-builder",
+  "description": "A mean stack deck builder for Hearthstone with",
+  "main": "server.js",
+  "authors": [
+    "Barrelrolla <chetkara@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Team-Murlocs/Hearthstone-Deck-Builder",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
