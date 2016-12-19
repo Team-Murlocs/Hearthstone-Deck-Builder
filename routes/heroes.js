@@ -1,8 +1,7 @@
-var express = require('express');
-var router = express.Router();
-
-router.get('/heroes', function(req, res, next) {
+"use strict";
+var express = require("express");
+var heroesRouter = express.Router();
+exports.heroesRouter = heroesRouter;
+heroesRouter.get('/heroes', function (req, res, next) {
     res.send('HEROES LIST');
 });
-
-module.exports = router;

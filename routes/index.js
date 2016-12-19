@@ -1,8 +1,7 @@
-var express = require('express');
-var router = express.Router();
-
-router.get('/', function(req, res, next) {
+"use strict";
+var express = require("express");
+var indexRouter = express.Router();
+exports.indexRouter = indexRouter;
+indexRouter.get('/', function (req, res, next) {
     res.render('./views/index.pug');
 });
-
-module.exports = router;

@@ -1,28 +1,20 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var heroes = require('./routes/heroes');
-
+"use strict";
+var express = require("express");
+var bodyParser = require("body-parser");
+var path = require("path");
+var mongojs = require("mongojs");
+var index_1 = require("./routes/index");
+var heroes_1 = require("./routes/heroes");
+var db = mongojs("mongodb://pesho:pesho@ds139428.mlab.com:39428/hearthstone-deck-builder");
 var port = 3000;
-
 var app = express();
-
-// View engine
 app.set('views', path.join(__dirname), 'views');
 app.set('view engine', 'pug');
-
-// Set static folder
 app.use(express.static(path.join(__dirname)));
-
-// Body parser middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
-app.use('/', index);
-app.use('/', heroes);
-
-app.listen(port, function() {
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/', index_1.indexRouter);
+app.use('/', heroes_1.heroesRouter);
+app.listen(port, function () {
     console.log('Server listening on port ' + port);
 });

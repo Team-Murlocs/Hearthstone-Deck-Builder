@@ -1,8 +1,11 @@
 import * as express from "express"
 import * as bodyParser from "body-parser"
 import * as path from "path"
+import * as mongojs from "mongojs"
 import { indexRouter } from "./routes/index"
 import { heroesRouter } from "./routes/heroes"
+
+var db = mongojs("mongodb://pesho:pesho@ds139428.mlab.com:39428/hearthstone-deck-builder")
 
 var port = 3000;
 
