@@ -20,7 +20,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/', indexRouter)
-app.use('/', heroesRouter)
+app.use('/heroes', heroesRouter)
 
 app.listen(port, function() {
     console.log('Server listening on port ' + port)
