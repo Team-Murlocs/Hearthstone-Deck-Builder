@@ -7,21 +7,21 @@ import { heroesRouter } from "./routes/heroes"
 
 var db = mongojs("mongodb://pesho:pesho@ds139428.mlab.com:39428/hearthstone-deck-builder")
 
-var port = 3000;
+var port = 3000
 
-var app = express();
+var app = express()
 
-app.set('views', path.join(__dirname), 'views');
-app.set('view engine', 'pug');
+app.set('views', path.join(__dirname), 'views')
+app.set('view engine', 'pug')
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname)))
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 
-app.use('/', indexRouter);
-app.use('/', heroesRouter);
+app.use('/', indexRouter)
+app.use('/', heroesRouter)
 
 app.listen(port, function() {
-    console.log('Server listening on port ' + port);
-});
+    console.log('Server listening on port ' + port)
+})
