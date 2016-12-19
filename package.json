@@ -4,7 +4,9 @@
   "description": "A mean stack deck builder for Hearthstone with",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,11 @@
     "express": "^4.14.0",
     "mongojs": "^2.4.0",
     "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.52",
+    "nodemon": "^1.11.0",
+    "ts-node": "^1.7.2",
+    "typescript": "^2.1.4"
   }
 }
