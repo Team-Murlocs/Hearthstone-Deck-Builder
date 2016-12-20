@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname)));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', index_1.indexRouter);
-app.use('/', heroes_1.heroesRouter);
+app.use('/heroes', heroes_1.heroesRouter);
 app.listen(port, function () {
     console.log('Server listening on port ' + port);
 });
