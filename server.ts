@@ -2,8 +2,8 @@ import * as express from "express"
 import * as bodyParser from "body-parser"
 import * as path from "path"
 import * as mongojs from "mongojs"
-import { indexRouter } from "./routes/index"
-import { heroesRouter } from "./routes/heroes"
+import { indexRouter } from "./server/routes/index"
+import { heroesRouter } from "./server/routes/heroes"
 
 let db = mongojs("mongodb://pesho:pesho@ds139428.mlab.com:39428/hearthstone-deck-builder")
 
