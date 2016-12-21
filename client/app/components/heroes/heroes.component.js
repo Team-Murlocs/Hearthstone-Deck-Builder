@@ -16,7 +16,6 @@ HeroesComponent = __decorate([
         moduleId: module.id,
         selector: "heroes",
         templateUrl: "heroes.component.html",
-        styles: ["\n        img {\n            width: 600px;\n        }\n    "]
     })
 ], HeroesComponent);
 exports.HeroesComponent = HeroesComponent;
