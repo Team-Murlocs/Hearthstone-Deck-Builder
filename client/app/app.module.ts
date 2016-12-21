@@ -11,7 +11,10 @@ import { HeroesComponent } from "./components/heroes/heroes.component"
 @NgModule({
     imports: [BrowserModule, HttpModule, routing],
     declarations: [
-        AppComponent, HomeComponent, ProfileComponent, HeroesComponent
+        AppComponent,
+        HomeComponent,
+        ProfileComponent,
+        HeroesComponent
     ],
     bootstrap: [AppComponent],
     providers: [appRoutingProviders]

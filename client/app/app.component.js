@@ -15,7 +15,8 @@ AppComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: "app",
-        templateUrl: "app.component.html"
+        templateUrl: "app.component.html",
+        styles: ["\n        body {\n        padding-top: 70px;\n    }\n    "]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
