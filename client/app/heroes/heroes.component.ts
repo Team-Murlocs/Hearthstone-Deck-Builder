@@ -1,14 +1,13 @@
 import { Component } from "@angular/core"
-import { Auth } from "../../services/auth.service"
+//import { Auth } from "../services/auth.service"
 
-@Component({
-    //moduleId: module.id,
+@Component({    
     selector: "heroes",
     templateUrl: "heroes.component.html",
 })
 
 export class HeroesComponent {
-    constructor(private auth: Auth) {
+    //constructor(private auth: Auth) {
 
-    }
+    //}
 }
