@@ -17,7 +17,10 @@
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
 /******/ 		while(callbacks.length)
 /******/ 			callbacks.shift().call(null, __webpack_require__);
-/******/
+/******/ 		if(moreModules[0]) {
+/******/ 			installedModules[0] = 0;
+/******/ 			return __webpack_require__(0);
+/******/ 		}
 /******/ 	};
 /******/
 /******/ 	// The module cache
@@ -28,7 +31,6 @@
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
 /******/ 		2:0,
-/******/ 		0:0,
 /******/ 		1:0
 /******/ 	};
 /******/
