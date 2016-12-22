@@ -9,6 +9,8 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var app_routing_1 = require("./routing/app.routing");
+var angular2_jwt_1 = require("angular2-jwt");
+var auth_service_1 = require("./services/auth.service");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./components/home/home.component");
 var profile_component_1 = require("./components/profile/profile.component");
@@ -28,7 +30,11 @@ AppModule = __decorate([
             heroes_component_1.HeroesComponent
         ],
         bootstrap: [app_component_1.AppComponent],
-        providers: [app_routing_1.appRoutingProviders]
+        providers: [
+            app_routing_1.appRoutingProviders,
+            angular2_jwt_1.AUTH_PROVIDERS,
+            auth_service_1.Auth
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;

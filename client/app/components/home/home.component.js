@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(auth) {
+        this.auth = auth;
     }
     return HomeComponent;
 }());
