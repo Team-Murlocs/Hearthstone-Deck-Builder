@@ -1,25 +1,30 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" routerLink="/">Hearthstone Deck Builder</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-            <li><a routerLink="/heroes">Heroes</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a routerLink="/profile">Profile</a></li>
-        </ul>
-        </div><!--/.nav-collapse -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Hearthstone Deck Builder</span>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" routerLink="/">Home</a>
+        <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>
+      </nav>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" routerLink="/profile">Profile</a>
+      </nav>
     </div>
-</nav>
-
-<div class="container">
-    <router-outlet></router-outlet>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Hearthstone Deck Builder</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" routerLink="/">Home</a>
+      <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
 </div>
