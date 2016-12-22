@@ -1,5 +1,5 @@
 import { Component } from "@angular/core"
-//import { Auth } from "../services/auth.service"
+import { Auth } from "../../services/auth.service"
 
 @Component({    
     selector: "heroes",
@@ -7,7 +7,7 @@ import { Component } from "@angular/core"
 })
 
 export class HeroesComponent {
-    //constructor(private auth: Auth) {
+    constructor(private auth: Auth) {
 
-    //}
+    }
 }
