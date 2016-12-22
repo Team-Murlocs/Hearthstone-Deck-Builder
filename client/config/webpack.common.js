@@ -7,13 +7,13 @@ const helpers = require('./helpers');
 
 module.exports = {
     entry: {
-        //'polyfills': './client/app/polyfills.ts',
-        //'vendor': './client/app/vendor.ts',
+        'polyfills': './client/app/polyfills.ts',
+        'vendor': './client/app/vendor.ts',
         'app': './client/app/main.ts',
     },
     resolve: {
         root: [path.resolve(__dirname, '../app'), path.resolve(__dirname, '../../node_modules'), path.resolve(__dirname, '../../bower_components')],
-        extensions: ['', '.ts', '.js', '.css'],
+        extensions: ['', '.js', '.ts', '.css'],
         alias: {
             jquery: path.resolve(__dirname, '../../node_modules/jquery/dist/jquery.min.js'),
             bootstrap: path.resolve(__dirname, '../../node_modules/bootstrap/dist/js/bootstrap.min.js'),
