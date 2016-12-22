@@ -4,7 +4,6 @@ const helpers = require('./helpers');
 
 module.exports = webpackMerge(commonConfig, {
     devtool: 'source-map',
-    debug: true,
     output: {
         path: helpers.root('../dist'),
         publicPath: 'http://localhost:3000/',
