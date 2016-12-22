@@ -6407,105 +6407,6 @@ function objectAssign(target) {
 
 /***/ },
 
-/***/ 371:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-//import { Auth } from "../services/auth.service"
-var HeroesComponent = (function () {
-    function HeroesComponent() {
-    }
-    HeroesComponent = __decorate([
-        core_1.Component({
-            selector: "heroes",
-            template: __webpack_require__(707),
-        }), 
-        __metadata('design:paramtypes', [])
-    ], HeroesComponent);
-    return HeroesComponent;
-}());
-exports.HeroesComponent = HeroesComponent;
-
-
-/***/ },
-
-/***/ 372:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-var HomeComponent = (function () {
-    function HomeComponent() {
-    }
-    HomeComponent = __decorate([
-        core_1.Component({
-            selector: 'app-home',
-            template: "<h1>Welcome</h1>"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], HomeComponent);
-    return HomeComponent;
-}());
-exports.HomeComponent = HomeComponent;
-
-
-/***/ },
-
-/***/ 373:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(1);
-//import { Auth } from "../../services/auth.service"
-var ProfileComponent = (function () {
-    function ProfileComponent() {
-    }
-    ProfileComponent = __decorate([
-        core_1.Component({
-            //moduleId: module.id,
-            selector: "profile",
-            template: __webpack_require__(708)
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ProfileComponent);
-    return ProfileComponent;
-}());
-exports.ProfileComponent = ProfileComponent;
-
-
-/***/ },
-
 /***/ 434:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -6527,9 +6428,9 @@ var forms_1 = __webpack_require__(516);
 var angular2_jwt_1 = __webpack_require__(370);
 var auth_service_1 = __webpack_require__(555);
 var app_component_1 = __webpack_require__(553);
-var home_component_1 = __webpack_require__(372); //import home components
-var heroes_component_1 = __webpack_require__(371);
-var profile_component_1 = __webpack_require__(373);
+var home_component_1 = __webpack_require__(976); //import home components
+var heroes_component_1 = __webpack_require__(975);
+var profile_component_1 = __webpack_require__(977);
 var app_router_1 = __webpack_require__(554);
 var common_1 = __webpack_require__(90);
 var AppModule = (function () {
@@ -7312,9 +7213,9 @@ exports.AppComponent = AppComponent;
 "use strict";
 "use strict";
 var router_1 = __webpack_require__(285);
-var home_component_1 = __webpack_require__(372);
-var heroes_component_1 = __webpack_require__(371);
-var profile_component_1 = __webpack_require__(373);
+var home_component_1 = __webpack_require__(976);
+var heroes_component_1 = __webpack_require__(975);
+var profile_component_1 = __webpack_require__(977);
 var appRoutes = [
     { path: "", component: home_component_1.HomeComponent, pathMatch: 'full' },
     { path: "home", component: home_component_1.HomeComponent },
@@ -7606,21 +7507,7 @@ function selectValueAccessor(dir, valueAccessors) {
 /***/ 706:
 /***/ function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\r\n    <div class=\"container\">\r\n        <div class=\"navbar-header\">\r\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n            <span class=\"sr-only\">Toggle navigation</span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n        </button>\r\n        <a class=\"navbar-brand\" routerLink=\"/\">Hearthstone Deck Builder</a>\r\n        </div>\r\n        <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n        <ul class=\"nav navbar-nav\">\r\n            <li><a routerLink=\"/heroes\">Heroes</a></li>\r\n        </ul>\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li><a routerLink=\"/profile\">Profile</a></li>\r\n        </ul>\r\n        </div><!--/.nav-collapse -->\r\n    </div>\r\n</nav>\r\n\r\n<div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n</div>";
-
-/***/ },
-
-/***/ 707:
-/***/ function(module, exports) {
-
-module.exports = "<img src=\"http://static.giantbomb.com/uploads/original/8/87610/2534136-ss3-full.jpg\" alt=\"heroes\">";
-
-/***/ },
-
-/***/ 708:
-/***/ function(module, exports) {
-
-module.exports = "<h1>PROFILE</h1>";
+module.exports = "<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\r\n  <header class=\"mdl-layout__header\">\r\n    <div class=\"mdl-layout__header-row\">\r\n      <!-- Title -->\r\n      <span class=\"mdl-layout-title\">Hearthstone Deck Builder</span>\r\n      <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\r\n        <a class=\"mdl-navigation__link\" routerLink=\"/\">Home</a>\r\n        <a class=\"mdl-navigation__link\" routerLink=\"/heroes\">Heroes</a>\r\n      </nav>\r\n      <!-- Add spacer, to align navigation to the right -->\r\n      <div class=\"mdl-layout-spacer\"></div>\r\n      <!-- Navigation. We hide it in small screens. -->\r\n      <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\r\n        <a class=\"mdl-navigation__link\" routerLink=\"/profile\">Profile</a>\r\n      </nav>\r\n    </div>\r\n  </header>\r\n  <div class=\"mdl-layout__drawer\">\r\n    <span class=\"mdl-layout-title\">Hearthstone Deck Builder</span>\r\n    <nav class=\"mdl-navigation\">\r\n      <a class=\"mdl-navigation__link\" routerLink=\"/\">Home</a>\r\n      <a class=\"mdl-navigation__link\" routerLink=\"/heroes\">Heroes</a>\r\n    </nav>\r\n  </div>\r\n  <main class=\"mdl-layout__content\">\r\n    <div class=\"page-content\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </main>\r\n</div>";
 
 /***/ },
 
@@ -8086,6 +7973,119 @@ var app_module_1 = __webpack_require__(434);
 var platform = platform_browser_dynamic_1.platformBrowserDynamic();
 platform.bootstrapModule(app_module_1.AppModule);
 
+
+/***/ },
+
+/***/ 975:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+//import { Auth } from "../services/auth.service"
+var HeroesComponent = (function () {
+    function HeroesComponent() {
+    }
+    HeroesComponent = __decorate([
+        core_1.Component({
+            selector: "heroes",
+            template: __webpack_require__(978),
+        }), 
+        __metadata('design:paramtypes', [])
+    ], HeroesComponent);
+    return HeroesComponent;
+}());
+exports.HeroesComponent = HeroesComponent;
+
+
+/***/ },
+
+/***/ 976:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var HomeComponent = (function () {
+    function HomeComponent() {
+    }
+    HomeComponent = __decorate([
+        core_1.Component({
+            selector: 'app-home',
+            template: "<h1>Welcome</h1>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], HomeComponent);
+    return HomeComponent;
+}());
+exports.HomeComponent = HomeComponent;
+
+
+/***/ },
+
+/***/ 977:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+//import { Auth } from "../../services/auth.service"
+var ProfileComponent = (function () {
+    function ProfileComponent() {
+    }
+    ProfileComponent = __decorate([
+        core_1.Component({
+            //moduleId: module.id,
+            selector: "profile",
+            template: __webpack_require__(979)
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ProfileComponent);
+    return ProfileComponent;
+}());
+exports.ProfileComponent = ProfileComponent;
+
+
+/***/ },
+
+/***/ 978:
+/***/ function(module, exports) {
+
+module.exports = "<img src=\"http://static.giantbomb.com/uploads/original/8/87610/2534136-ss3-full.jpg\" alt=\"heroes\">";
+
+/***/ },
+
+/***/ 979:
+/***/ function(module, exports) {
+
+module.exports = "<h1>PROFILE</h1>";
 
 /***/ }
 

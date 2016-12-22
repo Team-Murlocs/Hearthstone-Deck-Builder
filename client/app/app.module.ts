@@ -7,9 +7,9 @@ import { Auth } from "./services/auth.service";
 
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component'; //import home components
-import { HeroesComponent } from "./heroes/heroes.component";
-import { ProfileComponent } from "./profile/profile.component";
+import { HomeComponent } from './components/home/home.component'; //import home components
+import { HeroesComponent } from "./components/heroes/heroes.component";
+import { ProfileComponent } from "./components/profile/profile.component";
 import { routing} from './app.router';
 import { APP_BASE_HREF } from '@angular/common';
 
