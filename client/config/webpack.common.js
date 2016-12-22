@@ -36,7 +36,7 @@ module.exports = {
         }, {
             test: /\.css$/,
             exclude: helpers.root('src', 'app'),
-            loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+            loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader' })
         }, {
             test: /\.css$/,
             include: helpers.root('src', 'app'),
@@ -60,7 +60,7 @@ module.exports = {
                 // your Angular Async Route paths relative to this root directory
             }
         ),
-        new ExtractTextPlugin("[name].css", { allChunks: true }),
+        new ExtractTextPlugin({ filename: '../[name].css', disable: false, allChunks: true }),
         new webpack.ProvidePlugin({
             $: "jquery",
             jquery: "jquery",
