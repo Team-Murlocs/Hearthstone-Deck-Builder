@@ -12,8 +12,8 @@ module.exports = {
         'app': './client/app/main.ts',
     },
     resolve: {
-        root: [path.resolve(__dirname, '../app'), path.resolve(__dirname, '../../node_modules'), path.resolve(__dirname, '../../bower_components')],
-        extensions: ['', '.js', '.ts', '.css'],
+        modules: [path.resolve(__dirname, '../app'), path.resolve(__dirname, '../../node_modules'), path.resolve(__dirname, '../../bower_components')],
+        extensions: ['.js', '.ts', '.css'],
         alias: {
             jquery: path.resolve(__dirname, '../../node_modules/jquery/dist/jquery.min.js'),
             bootstrap: path.resolve(__dirname, '../../node_modules/bootstrap/dist/js/bootstrap.min.js'),
