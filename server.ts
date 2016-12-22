@@ -1,7 +1,11 @@
-import * as express from "express"
-import * as bodyParser from "body-parser"
-import * as path from "path"
-import * as mongojs from "mongojs"
+//import * as express from "express"
+//import * as bodyParser from "body-parser"
+//import * as path from "path"
+//import * as mongojs from "mongojs"
+let mongojs = require("mongojs")
+let bodyParser = require("body-parser")
+let express = require("express")
+let path = require("path")
 // import { indexRouter } from "./server/routes/index"
 // import { heroesRouter } from "./server/routes/heroes"
 

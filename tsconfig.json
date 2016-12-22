@@ -2,8 +2,19 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
+        "moduleResolution": "node",
+         "typeRoots": [
+        "./node_modules/@types"
+        ],
+        "emitDecoratorMetadata": true,   
+        "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "noImplicitAny": false,
-        "sourceMap": false
+        "sourceMap": false,      
+         "exclude": [
+            "node_modules",
+            "dist"
+        ] 
     }
+    
 }

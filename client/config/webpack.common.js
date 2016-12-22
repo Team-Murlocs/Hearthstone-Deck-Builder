@@ -13,7 +13,7 @@ module.exports = {
     },
     resolve: {
         modules: [path.resolve(__dirname, '../app'), path.resolve(__dirname, '../../node_modules'), path.resolve(__dirname, '../../bower_components')],
-        extensions: ['.js', '.ts', '.css'],
+        extensions: ['.js', '.ts', '.css', ' '],
         alias: {
             jquery: path.resolve(__dirname, '../../node_modules/jquery/dist/jquery.min.js'),
             bootstrap: path.resolve(__dirname, '../../node_modules/bootstrap/dist/js/bootstrap.min.js'),
@@ -67,5 +67,8 @@ module.exports = {
             "window.jQuery": "jquery",
             jQuery: "jquery"
         })
-    ]
+    ],
+    node: {
+    streams: true
+  }
 };
