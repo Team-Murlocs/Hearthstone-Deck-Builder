@@ -1,4 +1,4 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
@@ -20,11 +20,26 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" routerLink="/">Home</a>
       <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>
+      <a class="mdl-navigation__link" routerLink="/profile">Profile</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">
       <router-outlet></router-outlet>
     </div>
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">
+          More Information
+        </div>
+      </div>
+      <div class="mdl-mini-footer__right-section">
+        <ul class="mdl-mini-footer__link-list">
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Privacy and Terms</a></li>
+          <li><a href="#">User Agreement</a></li>
+        </ul>
+      </div>
+    </footer>
   </main>
 </div>
