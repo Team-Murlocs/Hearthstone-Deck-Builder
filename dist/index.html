@@ -3,17 +3,26 @@
 
 <head>
     <base href="/"/>
-    <title>Document</title>
+    <title>Hearthstone Deck Builder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css" />
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://cdn.auth0.com/js/lock/10.6/lock.min.js"></script>
+    <style>
+        #loading {
+            position: fixed;
+            top: 50%;
+            left: 50%
+        }
+    </style>
 </head>
 
 <body>
     <app-root>
-        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+        <div id="loading">
+            <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>            
+        </div>
     </app-root>
 <script type="text/javascript" src="http://localhost:3000/polyfills.js"></script><script type="text/javascript" src="http://localhost:3000/vendor.js"></script><script type="text/javascript" src="http://localhost:3000/app.js"></script></body>
 
