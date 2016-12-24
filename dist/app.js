@@ -6584,6 +6584,7 @@ var app_component_1 = __webpack_require__(554);
 var home_component_1 = __webpack_require__(373); //import home components
 var heroes_component_1 = __webpack_require__(372);
 var profile_component_1 = __webpack_require__(374);
+var _404_component_1 = __webpack_require__(976);
 var app_router_1 = __webpack_require__(555);
 var common_1 = __webpack_require__(90);
 var AppModule = (function () {
@@ -6592,7 +6593,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_router_1.routing, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, heroes_component_1.HeroesComponent, profile_component_1.ProfileComponent],
+            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, heroes_component_1.HeroesComponent, profile_component_1.ProfileComponent, _404_component_1.NotFoundComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, angular2_jwt_1.AUTH_PROVIDERS,
                 auth_service_1.Auth]
@@ -7371,11 +7372,13 @@ var router_1 = __webpack_require__(286);
 var home_component_1 = __webpack_require__(373);
 var heroes_component_1 = __webpack_require__(372);
 var profile_component_1 = __webpack_require__(374);
+var _404_component_1 = __webpack_require__(976);
 var appRoutes = [
     { path: "", component: home_component_1.HomeComponent, pathMatch: 'full' },
     { path: "home", component: home_component_1.HomeComponent },
     { path: "heroes", component: heroes_component_1.HeroesComponent },
-    { path: "profile", component: profile_component_1.ProfileComponent }
+    { path: "profile", component: profile_component_1.ProfileComponent },
+    { path: '**', component: _404_component_1.NotFoundComponent }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
 
@@ -8093,6 +8096,46 @@ var app_module_1 = __webpack_require__(435);
 var platform = platform_browser_dynamic_1.platformBrowserDynamic();
 platform.bootstrapModule(app_module_1.AppModule);
 
+
+/***/ },
+
+/***/ 976:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var NotFoundComponent = (function () {
+    function NotFoundComponent() {
+    }
+    NotFoundComponent = __decorate([
+        core_1.Component({
+            selector: "notFound",
+            template: __webpack_require__(977),
+        }), 
+        __metadata('design:paramtypes', [])
+    ], NotFoundComponent);
+    return NotFoundComponent;
+}());
+exports.NotFoundComponent = NotFoundComponent;
+;
+
+
+/***/ },
+
+/***/ 977:
+/***/ function(module, exports) {
+
+module.exports = "<p>404 Not found</p>";
 
 /***/ }
 
