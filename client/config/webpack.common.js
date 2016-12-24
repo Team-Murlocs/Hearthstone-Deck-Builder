@@ -60,7 +60,8 @@ module.exports = {
                 // your Angular Async Route paths relative to this root directory
             }
         ),
-        new ExtractTextPlugin({ filename: '../[name].css', disable: false, allChunks: true }),
+        //TODO: Add css library and css file
+        new ExtractTextPlugin("../client/style.css"),
         new webpack.ProvidePlugin({
             $: "jquery",
             jquery: "jquery",

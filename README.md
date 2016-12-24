@@ -16,9 +16,9 @@ Deck builder for hearthstone
     "watch:prod": "webpack --config client/config/webpack.prod.js  --progress --profile --bail --watch",
     "watch": "npm run watch:dev",
     "webpack-dev-server": "webpack-dev-server",
-    "webpack": "webpack"
+    "webpack": "webpack"    
     
-###### Start with "npm start" or "node server"
+##### Start with "npm start" or "node server"
 
 ## 2. Structur
 
