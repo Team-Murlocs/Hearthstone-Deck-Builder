@@ -9424,11 +9424,11 @@ __webpack_require__(437);
 // import '../node_modules/core-js/client/shim.min.js'
 // import '../node_modules/reflect-metadata/Reflect.js'
 __webpack_require__(440);
-if (process.env.ENV === 'production') {
+if (process.env.ENV === "production") {
 }
 else {
     // Development
-    Error['stackTraceLimit'] = Infinity;
+    Error["stackTraceLimit"] = Infinity;
     __webpack_require__(439);
 }
 
