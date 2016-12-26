@@ -1,1 +1,13 @@
-<p class="cards">Cards</p>
+<thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Class</th>
+</thead>
+<tbody>
+    <tr *ngFor="let card of cards" [attr.card]="card">
+        <td>{{card.id}}</td>
+        <td>{{card.name}}</td>
+        <td>{{card.type}}</td>     
+    </tr>
+</tbody>
+
