@@ -7,4 +7,4 @@ export class Card {
     text: string;
     playerClass: string;
     locale: string;
-}
+};
