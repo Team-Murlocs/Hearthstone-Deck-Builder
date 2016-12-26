@@ -7,7 +7,8 @@ const appRoutes = [
     { path: "home", component: Components.HomeComponent },
     { path: "heroes", component: Components.HeroesComponent },
     { path: "profile", component: Components.ProfileComponent },
-    { path: "cards", component: Components.CardsComponent}
+    { path: "cards", component: Components.CardsComponent},
+    {path: "decks", component: Components.DecksComponent},
     { path: "**", component: Components.NotFoundComponent }
 ];
 
