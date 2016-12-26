@@ -17,7 +17,9 @@ import { APP_BASE_HREF } from "@angular/common";
         Components.ProfileComponent,
         Components.NotFoundComponent,
         Components.CardsComponent,
-        Components.DecksComponent
+        Components.DecksComponent,
+        Components.LoginComponent,
+        Components.LogoutComponent
         ], // declare all derectives and components
     bootstrap: [Components.AppComponent], // root component to bootstarp
      providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AUTH_PROVIDERS, //  appRoutingProviders,
