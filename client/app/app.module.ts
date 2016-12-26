@@ -7,6 +7,9 @@ import { Auth } from "./services/auth.service";
 import * as Components from "./component-loader";
 import { routing} from "./app.router";
 import { APP_BASE_HREF } from "@angular/common";
+import { Requester } from "./services/requester.service";
+import { CardService } from "./services/card.service";
+
 
 @NgModule({
     imports: [BrowserModule, HttpModule, routing, FormsModule],
@@ -21,7 +24,7 @@ import { APP_BASE_HREF } from "@angular/common";
         ], // declare all derectives and components
     bootstrap: [Components.AppComponent], // root component to bootstarp
      providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AUTH_PROVIDERS, //  appRoutingProviders,
-        Auth]
+        Auth, Requester, CardService]
 })
 export class AppModule { }
 
