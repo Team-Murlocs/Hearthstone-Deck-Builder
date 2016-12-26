@@ -1,13 +1,22 @@
-<thead>
+<!--<thead>
     <th>ID</th>
     <th>Name</th>
     <th>Class</th>
 </thead>
 <tbody>
     <tr *ngFor="let card of cards" [attr.card]="card">
-        <td>{{card.id}}</td>
-        <td>{{card.name}}</td>
-        <td>{{card.type}}</td>     
+        <td>{{card.cardId}}  |</td>
+        <td>{{card.name}}   |</td>
+        <td>{{card.type}}   |</td>     
     </tr>
-</tbody>
+</tbody>-->
+
+<div  *ngFor="let card of cards" [attr.card]="card">
+    <div class="demo-card-image mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">{{card.name}}</div>
+    <div class="mdl-card__actions">
+        <span class="demo-card-image__filename">Image.jpg</span>
+    </div>
+    </div>
+</div>
 

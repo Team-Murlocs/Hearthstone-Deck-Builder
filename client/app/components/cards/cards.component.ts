@@ -4,7 +4,23 @@ import { Card } from "../../models/card";
 
 @Component({
     selector: "cards",
-    templateUrl: "cards.component.html"
+    templateUrl: "cards.component.html",
+    styles:
+        [`.demo-card-image.mdl-card {
+        width: 256px;
+        height: 256px;
+        background: url('../assets/demos/image_card.jpg') center / cover;
+        }
+        .demo-card-image > .mdl-card__actions {
+        height: 52px;
+        padding: 16px;
+        background: rgba(0, 0, 0, 0.2);
+        }
+        .demo-card-image__filename {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        }`]
 })
 
 export class CardsComponent implements OnInit {
@@ -22,9 +38,10 @@ export class CardsComponent implements OnInit {
         this.cardService.getAllCards()
             .subscribe(
                 cards => {
-                    this.cards = cards as Card[];
+                    this.cards = cards["Basic"] as Card[];
                     console.log("cards");
-                    console.log(this.cards);
+                    console.log(this.cards["Basic"]);
+                                        
                 },
                 err => {
                     console.log("Ërror")

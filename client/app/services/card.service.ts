@@ -16,7 +16,7 @@ export class CardService {
     private requester: Requester<Card>;
     constructor(requester: Requester<Card>) {
         this.requester = requester;
-    }    
+    }
 
     getAllCards(): Observable<Card[] | Card> {
         return this.requester.getFromApi(this.baseUrl, this.options);
