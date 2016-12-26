@@ -21,7 +21,8 @@ export class Requester<T> {
 
     public getFromApi(url: string, options: RequestOptions): Observable<T[]> {
         return this.http
-        .get(url, options).map(res => JSON.parse(res.json()));
+        .get(url, options)
+        .map(res => res.json());
     }
 
 
