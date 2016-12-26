@@ -22,6 +22,7 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" routerLink="/">Home</a>
       <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>
+      <a class="mdl-navigation__link" routerLink="/cards">Cards</a>      
       <a class="mdl-navigation__link" routerLink="/profile">Profile</a>
       <a class="mdl-navigation__link" href="#" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</a>
       <a class="mdl-navigation__link" href="#" (click)="auth.logout()" *ngIf="auth.authenticated()">Logout</a>

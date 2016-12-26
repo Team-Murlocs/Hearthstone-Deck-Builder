@@ -10,7 +10,7 @@ import { APP_BASE_HREF } from "@angular/common";
 
 @NgModule({
     imports: [BrowserModule, HttpModule, routing, FormsModule],     
-    declarations: [Components.AppComponent, Components.HomeComponent, Components.HeroesComponent, Components.ProfileComponent, Components.NotFoundComponent], // declare all derectives and components
+    declarations: [Components.AppComponent, Components.HomeComponent, Components.HeroesComponent, Components.ProfileComponent, Components.NotFoundComponent, Components.CardsComponent], // declare all derectives and components
     bootstrap: [Components.AppComponent], // root component to bootstarp
      providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AUTH_PROVIDERS, //  appRoutingProviders,
         Auth]
