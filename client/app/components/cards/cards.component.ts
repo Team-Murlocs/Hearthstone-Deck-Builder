@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CardService } from "../../services/card.service";
 import { Card } from "../../models/card";
+import { Router, Params, Route, ActivatedRoute } from "@angular/router"
 
 @Component({
     selector: "cards",
@@ -45,21 +46,28 @@ export class CardsComponent implements OnInit {
     cards: Card[];
     error: any;
     cardType: string;
+
+    type: string = "Promo";
+
+
    
-    constructor(private cardService: CardService) {
+    constructor(private cardService: CardService, private route: ActivatedRoute,
+  private router: Router) {
     }
 
      ngOnInit() {
-        this.showCards();
+        this.route.params.subscribe(params => {
+            this.type = params["type"];
+            this.showCards(this.type); 
+        });         
     }
 
-    showCards() {
-        this.cardService.getAllCards()
+    showCards(type) {
+        this.cardService.getAllCardsByType(type)
             .subscribe(
                 cards => {
-                    this.cards = cards["Basic"] as Card[];
-                    console.log(this.cards);
-                                        
+                    this.cards = cards[type] as Card[];
+                    console.log(this.cards);                                        
                 },
                 err => {
                     console.log("Ërror")

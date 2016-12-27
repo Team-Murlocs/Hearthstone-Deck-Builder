@@ -21,4 +21,8 @@ export class CardService {
     getAllCards(): Observable<Card[] | Card> {
         return this.requester.getFromApi(this.baseUrl, this.options);
     }
+
+    getAllCardsByType(type: string): Observable<Card[] | Card> {
+        return this.requester.getFromApi(this.baseUrl, this.options);
+    }
 }
