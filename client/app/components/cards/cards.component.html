@@ -11,12 +11,32 @@
     </tr>
 </tbody>-->
 
-<div  *ngFor="let card of cards" [attr.card]="card">
+<!--<div  *ngFor="let card of cards" [attr.card]="card">
     <div class="demo-card-image mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title mdl-card--expand">{{card.name}}</div>
     <div class="mdl-card__actions">
         <span class="demo-card-image__filename">Image.jpg</span>
     </div>
     </div>
-</div>
+</div>-->
 
+<div class="cards">
+    <div class="mdl-layout mdl-js-layout mdl-color--white">
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+                <div class="mdl-card mdl-cell mdl-cell--2-col mdl-shadow--2dp" *ngFor="let card of cards" [attr.card]="card">
+                    <figure class="mdl-card__media">
+                        <img src="{{card.img}}" alt="{{card.name}}" />
+                    </figure>
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">{{card.name}}</h1>
+                    </div>
+                    <div class="mdl-layout-spacer"></div>                    
+                    <div class="mdl-card__supporting-text mdl-card--border">
+                        <p>{{card.type}}</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
