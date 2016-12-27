@@ -2,32 +2,15 @@
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
         <main class="mdl-layout__content">
             <div class="mdl-grid">
-                <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp" *ngFor="let hero of heroesList">
                     <figure class="mdl-card__media">
-                        <img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/f/fa/Malfurion_Stormrage%28621%29.png/250px-Malfurion_Stormrage%28621%29.png?version=8c3aebe4f7d7e3c2999898c68d53c94d" alt="Druid" />
+                        <img src="{{hero.img}}" alt="{{hero.class}}" />
                     </figure>
                     <div class="mdl-card__title">
-                        <h1 class="mdl-card__title-text">Malfurion</h1>
-                    </div>
-                    <div class="mdl-card__supporting-text">
+                        <h1 class="mdl-card__title-text">{{hero.name}}</h1>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Druid</a>
-                        <div class="mdl-layout-spacer"></div>
-                        </div>
-                    </div>
-
-                    <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-shadow--2dp">
-                        <figure class="mdl-card__media">
-                            <img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/a/a0/Rexxar%28484%29.png/250px-Rexxar%28484%29.png?version=467229f863083b172161e0333a42ad10" alt="Hunter" />
-                        </figure>
-                        <div class="mdl-card__title">
-                            <h1 class="mdl-card__title-text">Rexxar</h1>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                        </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Hunter</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">{{hero.class}}</a>
                         <div class="mdl-layout-spacer"></div>
                     </div>
                 </div>

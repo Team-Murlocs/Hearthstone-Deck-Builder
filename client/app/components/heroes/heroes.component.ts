@@ -6,7 +6,10 @@ import { Auth } from "../../services/auth.service"
     templateUrl: "heroes.component.html",
     styles: [`
         .mdl-grid {
-            max-width: 600px;
+            max-width: 800px;
+        }
+        .mdl-card {
+            max-width: 256px;
         }
         .mdl-card__media {
             background-color: #fff;
@@ -16,7 +19,7 @@ import { Auth } from "../../services/auth.service"
             height: 150;
         }
         .mdl-card__media > img {
-            max-width: 100%;
+            max-width: 120%;
         }
         .mdl-card__actions {
             display: flex;
@@ -31,7 +34,56 @@ import { Auth } from "../../services/auth.service"
 })
 
 export class HeroesComponent {
-    constructor(private auth: Auth) {
+    heroesList = [
+         {
+             name: "Garrosh Hellscream",
+             class: "Warrior",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-garrosh.jpg"
+         },
+         {
+             name: "Thrall",
+             class: "Shaman",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-thrall.jpg"
+         },
+         {
+             name: "Valeera Sanguinar",
+             class: "Rogue",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-valeera.jpg"
+         },
+         {
+             name: "Uther Lightbringer",
+             class: "Paladin",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-uther.jpg"
+         },
+         {
+             name: "Rexxar",
+             class: "Hunter",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-rexxar.jpg"
+         },
+         {
+             name: "Malfurion Stormrage",
+             class: "Druid",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-malfurion.jpg"
+         },
+         {
+             name: "Gul'dan",
+             class: "Warlock",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-guldan.jpg"
+         },
+         {
+             name: "Jaina Proudmoore",
+             class: "Mage",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-jaina.jpg"
+         },
+         {
+             name: "Anduin Wrynn",
+             class: "Priest",
+             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-anduin.jpg"
+         }
+     ]
 
+    constructor() {
     }
+
+
 }
