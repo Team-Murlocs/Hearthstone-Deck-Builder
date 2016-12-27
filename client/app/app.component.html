@@ -35,11 +35,11 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Quick Menu</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" routerLink="/">Home</a>
-      <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>
-      <a class="mdl-navigation__link" routerLink="/cards">Cards</a>
-      <a class="mdl-navigation__link" routerLink="/decks">Decks</a>           
-      <a class="mdl-navigation__link" routerLink="/profile" *ngIf="auth.authenticated()">Profile</a>
+      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/">Home</a>
+      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/heroes">Heroes</a>
+      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/cards">Cards</a>
+      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/decks">Decks</a>           
+      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/profile" *ngIf="auth.authenticated()">Profile</a>
       <hr>
       <button class="mdl-button mdl-js-button" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</button>
       <button class="mdl-button mdl-js-button" (click)="auth.logout()" *ngIf="auth.authenticated()">Logout</button>
@@ -65,6 +65,6 @@
           <li><a href="#">User Agreement</a></li>
         </ul>
       </div>
-    </footer> 
-  </main>   
+    </footer>
+  </main>
 </div>

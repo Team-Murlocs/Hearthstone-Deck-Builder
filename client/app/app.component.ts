@@ -9,5 +9,14 @@ import { Auth } from './services/auth.service'
 })
 export class AppComponent {
     constructor(private auth: Auth) {
+
+    }
+
+    hideSidebar: any = function() {
+        var sidebar = document.getElementsByClassName('mdl-layout__drawer')[0];
+        sidebar.classList.remove('is-visible');
+        sidebar.setAttribute('aria-hidden', 'true');
+        var obfuscator = document.getElementsByClassName('mdl-layout__obfuscator')[0];
+        obfuscator.classList.remove('is-visible');
     }
 }
