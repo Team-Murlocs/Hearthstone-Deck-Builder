@@ -44,6 +44,7 @@ import { Card } from "../../models/card";
 export class CardsComponent implements OnInit {
     cards: Card[];
     error: any;
+    cardType: string;
    
     constructor(private cardService: CardService) {
     }

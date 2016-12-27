@@ -5,8 +5,21 @@
       <span class="mdl-layout-title">Hearthstone Deck Builder</span>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" routerLink="/">Home</a>
-        <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>
-        <a class="mdl-navigation__link" routerLink="/cards">Cards</a>
+        <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>       
+
+        <a id="demo-menu-lower-left" class="mdl-navigation__link">Cards</a> <!-- TODO: link must cnage mouse cursor -->
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+          <li class="mdl-menu__item"><a routerLink="/cards">Basic</a></li>
+          <li class="mdl-menu__item mdl-menu__item--full-bleed-divider"><a routerLink="/cards">Classic</a></li>
+          <li disabled class="mdl-menu__item"><a routerLink="/cards">Promo</a></li>
+          <li class="mdl-menu__item"><a routerLink="/cards">Reward</a></li>
+          <li class="mdl-menu__item"><a routerLink="/cards">Naxxramas</a></li>
+          <li class="mdl-menu__item"><a routerLink="/cards">Goblins vs Gnomes</a></li>
+          <li class="mdl-menu__item"><a routerLink="/cards">Blackrock Mountain</a></li>
+          <li class="mdl-menu__item"><a routerLink="/cards">The Grand Mountain</a></li>
+          <li class="mdl-menu__item"><a routerLink="/cards">The League of Explorers</a></li>          
+        </ul>
+       
       <a class="mdl-navigation__link" routerLink="/decks">Decks</a>
       </nav>
       <!-- Add spacer, to align navigation to the right -->
