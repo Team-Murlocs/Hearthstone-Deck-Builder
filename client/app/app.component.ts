@@ -3,6 +3,9 @@ import { Auth } from './services/auth.service'
 @Component({
     selector: 'app-root',
     templateUrl: 'app.component.html',
+    styles: [`
+        #demo-menu-lower-left { cursor: pointer; }
+    `]
 })
 export class AppComponent {
     constructor(private auth: Auth) {
