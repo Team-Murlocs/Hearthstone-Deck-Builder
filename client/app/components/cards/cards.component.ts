@@ -32,6 +32,9 @@ import { Card } from "../../models/card";
             margin-right: 3px;
             margin-left: 3px;
         }
+        .mdl-card .mdl-layout-spacer {
+            background-color: #fff
+        }
         // .demo-card-image.mdl-card {
         // width: 256px;
         // height: 256px;
