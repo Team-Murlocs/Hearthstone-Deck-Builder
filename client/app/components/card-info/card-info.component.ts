@@ -10,7 +10,7 @@ import { Router, Params, Route, ActivatedRoute } from "@angular/router";
 
 export class CardInfoComponent implements OnInit {
 
-    cards: Card[]
+    card: Card
 
     name: string;
 
@@ -19,7 +19,21 @@ export class CardInfoComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.name = params["name"];
-            this.cardService.getCardByName(this.name);
+            this.showCardInfo(name);
         });
-    }  
+    } 
+
+    showCardInfo(name) {
+        this.cardService.getCardByName(name)
+            .subscribe(                 
+                card => {
+                    this.card = card as Card;
+                    console.log(this.card);                                        
+                },
+                err => {
+                    console.log("Ërror")
+                    console.log(err);
+                }            
+            )
+    } 
 }
