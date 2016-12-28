@@ -47,7 +47,7 @@ export class CardsComponent implements OnInit {
     error: any;
     cardType: string;
 
-    type: string = "Promo";
+    type: string = "Basic";
 
 
    
