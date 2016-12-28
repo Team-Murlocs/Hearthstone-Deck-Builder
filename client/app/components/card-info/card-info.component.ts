@@ -28,6 +28,7 @@ export class CardInfoComponent implements OnInit {
             .subscribe(                 
                 card => {
                     this.card = card as Card;
+                    console.log("Card");
                     console.log(this.card);                                        
                 },
                 err => {
