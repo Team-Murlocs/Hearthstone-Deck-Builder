@@ -11,10 +11,10 @@ export const sets = [
     "Whispers of the Old Gods",
     "Karazhan",
     "Mean Streets of Gadgetzan",
-    "Tavern Brawl",
-    "Hero Skins",
-    "Missions",
-    "Credits",
-    "System",
-    "Debug"
+    "Tavern Brawl"
+    // "Hero Skins",
+    // "Missions",
+    // "Credits",
+    // "System",
+    // "Debug"
 ];
