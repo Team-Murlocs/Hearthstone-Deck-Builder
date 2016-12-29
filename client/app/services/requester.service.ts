@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core"
 import { Http, Response, Headers, RequestOptions }  from "@angular/http";
-import {  Observable } from "rxjs/Rx";
+import { Observable } from "rxjs/Rx";
 import { Card } from "../models/card";
 
 @Injectable()
@@ -24,8 +24,4 @@ export class Requester<T> {
         .get(url, options)
         .map(res => res.json());
     }
-
-    
-
-
 }
