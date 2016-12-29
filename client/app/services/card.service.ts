@@ -29,8 +29,10 @@ export class CardService {
                 let result = [];
                 console.log(cards);
                 for(let i = 0; i < cards.length; i++) {
-                    if(!(cards[i].type == "Enchantment" || cards[i].type == "Hero" ||
-                    cards[i].type == "Hero Power" || cards[i].name == "The Coin")) {                        
+                    if(cards[i].type != 'Enchantment' && cards[i].type != 'Hero' && cards[i].type != 'Hero Power' && cards[i].name != 'The Coin'
+                        && cards[i].cardSet != 'Tavern Brawl' && cards[i].cardSet != 'Hero Skins'
+                        && cards[i].cardSet != 'Missions' && cards[i].cardSet != 'Credits'
+                        && cards[i].cardSet != 'System' && cards[i].cardSet != 'Debug') {                        
                         result.push(cards[i]);
                     }                    
                 }              
@@ -52,7 +54,7 @@ export class CardService {
                     if(cards[i].type != 'Enchantment' && cards[i].type != 'Hero' && cards[i].type != 'Hero Power' && cards[i].name != 'The Coin'
                         && cards[i].cardSet != 'Tavern Brawl' && cards[i].cardSet != 'Hero Skins'
                         && cards[i].cardSet != 'Missions' && cards[i].cardSet != 'Credits'
-                    && cards[i].cardSet != 'System' && cards[i].cardSet != 'Debug') {                        
+                        && cards[i].cardSet != 'System' && cards[i].cardSet != 'Debug') {                        
                         result.push(cards[i]);
                     }                    
                 }        

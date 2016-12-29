@@ -10,7 +10,7 @@ import { PaginationInstance } from "ng2-pagination";
     templateUrl: "deckBuilder.component.html",
     styles:  [`
         .mdl-grid {
-            max-width: 1400px;
+            max-width: 1000px;
         }
         .mdl-card {
             max-width: 200px;
