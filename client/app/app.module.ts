@@ -10,10 +10,11 @@ import { routing} from "./app.router";
 import { APP_BASE_HREF } from "@angular/common";
 import { Requester } from "./services/requester.service";
 import { CardService } from "./services/card.service";
+import { Ng2PaginationModule } from "ng2-pagination";
 
 
 @NgModule({
-    imports: [BrowserModule, HttpModule, routing, FormsModule],
+    imports: [BrowserModule, HttpModule, routing, FormsModule, Ng2PaginationModule],
     declarations: [
         Components.AppComponent,
         Components.HomeComponent,

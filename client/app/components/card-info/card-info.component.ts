@@ -33,12 +33,12 @@ export class CardInfoComponent implements OnInit {
         this.cardService.getCardByName(name, type)
             .subscribe(                 
                 cards => {
-                    this.cards = cards[type] as Card[];
+                    this.cards = cards as Card[];
                     console.log("Card");
                     console.log(this.cards);                                        
                 },
                 err => {
-                    console.log("Ërror")
+                    console.log("Error")
                     console.log(err);
                 }            
             )

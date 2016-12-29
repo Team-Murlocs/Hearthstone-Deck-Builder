@@ -1,19 +1,18 @@
-import { Component } from "@angular/core"
+import { Component, OnInit} from "@angular/core"
 import { Auth } from "../../services/auth.service"
+import { Router, Params, Route, ActivatedRoute } from "@angular/router";
+import { CardService } from "../../services/card.service";
+import { Card } from "../../models/card";
 
 @Component({    
-    selector: "deckBuilder",
+    selector: "cardsByClass",
     templateUrl: "deckBuilder.component.html",
-    styles: [`
-        #chooseCharacter {
-            margin-bottom: 0px;
-            text-align: center;
-        }
+    styles:  [`
         .mdl-grid {
-            max-width: 800px;
+            max-width: 1400px;
         }
         .mdl-card {
-            max-width: 256px;
+            max-width: 200px;
         }
         .mdl-card__media {
             background-color: #fff;
@@ -23,7 +22,7 @@ import { Auth } from "../../services/auth.service"
             height: 150;
         }
         .mdl-card__media > img {
-            max-width: 120%;
+            max-width: 100%;
         }
         .mdl-card__actions {
             display: flex;
@@ -37,58 +36,38 @@ import { Auth } from "../../services/auth.service"
         .mdl-card .mdl-layout-spacer {
             background-color: #fff
         }
-    `]
+        img {
+            max-width: 170px;
+        }
+        `]
 })
 
-export class DeckBuilderComponent {
-    heroesList = [
-         {
-             name: "Garrosh Hellscream",
-             class: "Warrior",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-garrosh.jpg"
-         },
-         {
-             name: "Thrall",
-             class: "Shaman",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-thrall.jpg"
-         },
-         {
-             name: "Valeera Sanguinar",
-             class: "Rogue",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-valeera.jpg"
-         },
-         {
-             name: "Uther Lightbringer",
-             class: "Paladin",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-uther.jpg"
-         },
-         {
-             name: "Rexxar",
-             class: "Hunter",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-rexxar.jpg"
-         },
-         {
-             name: "Malfurion Stormrage",
-             class: "Druid",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-malfurion.jpg"
-         },
-         {
-             name: "Gul'dan",
-             class: "Warlock",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-guldan.jpg"
-         },
-         {
-             name: "Jaina Proudmoore",
-             class: "Mage",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-jaina.jpg"
-         },
-         {
-             name: "Anduin Wrynn",
-             class: "Priest",
-             img: "http://us.battle.net/hearthstone/static/images/game-guide/heroes/artwork-thumbnail-anduin.jpg"
-         }
-     ]
+export class DeckBuilderComponent implements OnInit {
 
-    constructor() {
+    cards: Card[]
+
+    cardClass: string;   
+
+    constructor(private cardService: CardService, private route: ActivatedRoute) {
+    }
+
+    ngOnInit() {
+        this.route.params.subscribe(params => {
+            this.cardClass = params["class"];
+            this.showCardByClass(this.cardClass);
+        });
+    }
+
+    showCardByClass(playerClass) {
+        this.cardService.getCardByClass(playerClass)
+            .subscribe(
+                cards => {                    
+                    this.cards = cards as Card[];
+                    //TODO: Neutral cards
+                },
+                err => {
+                    console.log(err);
+                }
+            )
     }
 }

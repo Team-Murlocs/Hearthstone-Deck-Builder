@@ -31,7 +31,7 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" routerLink="/profile" *ngIf="auth.authenticated()">Profile</a>
-        <a class="mdl-navigation__link" routerLink="/deckBuilder" *ngIf="auth.authenticated()">Build a deck</a>
+        <a class="mdl-navigation__link" routerLink="/heroes" *ngIf="auth.authenticated()">Build a deck</a>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</button>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="auth.logout()" *ngIf="auth.authenticated()">Logout</button>
       </nav>

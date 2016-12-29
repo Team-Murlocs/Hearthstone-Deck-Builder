@@ -1,19 +1,13 @@
-<div class="heroes">
+<div class="cardsByClass">
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
         <main class="mdl-layout__content">
-            <h3 id="chooseCharacter">Choose your character</h3>
             <div class="mdl-grid">
-                <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp" *ngFor="let hero of heroesList">
-                    <figure class="mdl-card__media">
-                        <img src="{{hero.img}}" alt="{{hero.class}}" />
-                    </figure>
-                    <div class="mdl-card__title">
-                        <h1 class="mdl-card__title-text">{{hero.name}}</h1>
-                    </div>
-                    <div class="mdl-layout-spacer"></div>                    
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">{{hero.class}}</a>
-                    </div>
+                <div *ngFor="let card of cards" [attr.card]="card">                    
+                    <div *ngIf="card.type != 'Enchantment' && card.type != 'Hero' && card.type != 'Hero Power' && card.name != 'The Coin'">
+                        <div class="mdl-cell mdl-cell--2-col" >                             
+                            <img src="{{card.img}}" alt="{{card.name}}"/>
+                        </div> 
+                    </div>                    
                 </div>
             </div>
         </main>
