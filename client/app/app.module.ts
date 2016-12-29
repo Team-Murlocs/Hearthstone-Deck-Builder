@@ -21,8 +21,6 @@ import { CardService } from "./services/card.service";
         Components.NotFoundComponent,
         Components.CardsComponent,
         Components.DecksComponent,
-        Components.LoginComponent,
-        Components.LogoutComponent,
         Components.CardInfoComponent
         ], // declare all derectives and components
     bootstrap: [Components.AppComponent], // root component to bootstarp
