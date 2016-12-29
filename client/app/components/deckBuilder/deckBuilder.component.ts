@@ -63,7 +63,12 @@ export class DeckBuilderComponent implements OnInit {
             .subscribe(
                 cards => {                    
                     this.cards = cards as Card[];
-                    //TODO: Neutral cards
+                    this.cardService.getCardByClass("Neutral")
+                        .subscribe(
+                            neutralCards => {
+                                this.cards = this.cards.concat(neutralCards)
+                            }
+                        )
                 },
                 err => {
                     console.log(err);
