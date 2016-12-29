@@ -2,9 +2,13 @@ import { Component } from "@angular/core"
 import { Auth } from "../../services/auth.service"
 
 @Component({    
-    selector: "heroes",
-    templateUrl: "heroes.component.html",
+    selector: "deckBuilder",
+    templateUrl: "deckBuilder.component.html",
     styles: [`
+        #chooseCharacter {
+            margin-bottom: 0px;
+            text-align: center;
+        }
         .mdl-grid {
             max-width: 800px;
         }
@@ -36,7 +40,7 @@ import { Auth } from "../../services/auth.service"
     `]
 })
 
-export class HeroesComponent {
+export class DeckBuilderComponent {
     heroesList = [
          {
              name: "Garrosh Hellscream",

@@ -1,8 +1,8 @@
-import { Component } from "@angular/core"
+import { Component } from "@angular/core";
 
 @Component({
-    selector: "notFound",
-    templateUrl: "404.component.html",
+    selector: "unauthorized",
+    templateUrl: "unauthorized.component.html",
     styles: [`
         h1 {
             left: 0;
@@ -16,7 +16,6 @@ import { Component } from "@angular/core"
     `]
 })
 
-
-export class NotFoundComponent {
-
-};
+export class UnauthorizedComponent {
+    
+}
