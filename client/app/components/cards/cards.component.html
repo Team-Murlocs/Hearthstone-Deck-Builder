@@ -4,7 +4,7 @@
             <div class="mdl-grid">
                 <div *ngFor="let card of cards" [attr.card]="card">                    
                     <div *ngIf="card.type != 'Enchantment' && card.type != 'Hero' && card.type != 'Hero Power' && card.name != 'The Coin'">
-                        <div class="mdl-cell mdl-cell--2-col" >                             
+                        <div class="mdl-cell mdl-cell--2-col" routerLink="{{card.name}}" >                             
                             <img src="{{card.img}}" alt="{{card.name}}"/>
                         </div> 
                     </div>                    

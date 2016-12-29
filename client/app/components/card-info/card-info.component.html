@@ -1,5 +1,5 @@
 <div class="mdl-layout mdl-color--grey-100">
-    <div class="card-info" ng>
-        <p>Card Inforamtion</p>
+    <div class="card-info" *ngFor="let card of cards" [attr.card]="card">
+        <p>{{card.name}}</p>
     </div>
 </div>
