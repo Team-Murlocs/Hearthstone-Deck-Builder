@@ -61,10 +61,7 @@ export class CardsComponent implements OnInit {
      ngOnInit() {
         this.route.params.subscribe(params => {
             this.utilsNumber = params["number"];
-            console.log(this.utilsNumber);
-            this.type = sets[this.utilsNumber];
-            console.log("Type");
-            console.log(this.type);            
+            this.type = sets[this.utilsNumber];                    
             this.showCards(this.type); 
         });         
     }
