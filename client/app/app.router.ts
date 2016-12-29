@@ -8,7 +8,7 @@ const appRoutes = [
     { path: "home", component: Components.HomeComponent },
     { path: "heroes", component: Components.HeroesComponent },
     { path: "profile", component: Components.ProfileComponent, canActivate: [AuthGuard] },
-    { path: "cards/:type", component: Components.CardsComponent },
+    { path: "cards/:number", component: Components.CardsComponent },
     { path: "cards/name/:name", component: Components.CardInfoComponent },
     { path: "decks", component: Components.DecksComponent },
     { path: "**", component: Components.NotFoundComponent }

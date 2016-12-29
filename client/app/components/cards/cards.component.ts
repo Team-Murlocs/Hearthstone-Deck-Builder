@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { CardService } from "../../services/card.service";
 import { Card } from "../../models/card";
 import { Router, Params, Route, ActivatedRoute } from "@angular/router"
+import { sets } from "../../utils/sets";
 
 @Component({
     selector: "cards",
@@ -47,6 +48,8 @@ export class CardsComponent implements OnInit {
     error: any;
     cardType: string;
 
+    utilsNumber: number;
+
     type: string = "Basic";
 
 
@@ -57,7 +60,11 @@ export class CardsComponent implements OnInit {
 
      ngOnInit() {
         this.route.params.subscribe(params => {
-            this.type = params["type"];
+            this.utilsNumber = params["number"];
+            console.log(this.utilsNumber);
+            this.type = sets[this.utilsNumber];
+            console.log("Type");
+            console.log(this.type);            
             this.showCards(this.type); 
         });         
     }
@@ -70,7 +77,7 @@ export class CardsComponent implements OnInit {
                     console.log(this.cards);                                        
                 },
                 err => {
-                    console.log("Ërror")
+                    console.log("Error")
                     console.log(err);
                 }
             )
