@@ -9,7 +9,7 @@ const appRoutes = [
     { path: "heroes", component: Components.HeroesComponent },
     { path: "profile", component: Components.ProfileComponent, canActivate: [AuthGuard] },
     { path: "cards/:number", component: Components.CardsComponent },
-    { path: "cards/name/:name", component: Components.CardInfoComponent },
+    { path: "cards/:number/:name", component: Components.CardInfoComponent },
     { path: "decks", component: Components.DecksComponent },
     { path: "deckBuilder", component: Components.DeckBuilderComponent, canActivate: [AuthGuard] },
     { path: "unauthorized", component: Components.UnauthorizedComponent },

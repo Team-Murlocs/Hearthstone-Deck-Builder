@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { CardService } from "../../services/card.service";
 import { Card } from "../../models/card";
 import { Router, Params, Route, ActivatedRoute } from "@angular/router";
+import { sets } from "../../utils/sets";
 
 @Component({
     selector: "card-info",
@@ -14,22 +15,25 @@ export class CardInfoComponent implements OnInit {
 
     name: string;
 
+    type: string;
+
     constructor (private cardService: CardService, private route: ActivatedRoute) {
     }
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.name = params["name"];
+            this.type = sets[params["type"]];
             console.log("name");
             console.log(this.name);
-            this.showCardInfo(this.name);
+            this.showCardInfo(this.name, this.type);
         });
     } 
 
-    showCardInfo(name) {
-        this.cardService.getCardByName(name)
+    showCardInfo(name, type) {
+        this.cardService.getCardByName(name, type)
             .subscribe(                 
                 cards => {
-                    this.cards = cards as Card[];
+                    this.cards = cards[type] as Card[];
                     console.log("Card");
                     console.log(this.cards);                                        
                 },
