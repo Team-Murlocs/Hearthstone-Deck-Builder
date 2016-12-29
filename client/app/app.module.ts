@@ -4,6 +4,7 @@ import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 import { AUTH_PROVIDERS } from "angular2-jwt";
 import { Auth } from "./services/auth.service";
+import { AuthGuard } from "./services/auth.guard"
 import * as Components from "./component-loader";
 import { routing} from "./app.router";
 import { APP_BASE_HREF } from "@angular/common";
@@ -25,7 +26,7 @@ import { CardService } from "./services/card.service";
         ], // declare all derectives and components
     bootstrap: [Components.AppComponent], // root component to bootstarp
      providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AUTH_PROVIDERS, //  appRoutingProviders,
-        Auth, Requester, CardService]
+        Auth, AuthGuard, Requester, CardService]
 })
 export class AppModule { }
 
