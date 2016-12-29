@@ -90,12 +90,12 @@ export class CardsComponent implements OnInit {
            
     }
 
-    @Input('cardsAll') cardsAll: Card[] = this.cards;   
     showCards(type) {
-        this.cardService.getAllCardsByType(type)
+        this.cardService.getAllCardsByType(type)            
             .subscribe(
-                cards => {
-                    this.cards = cards[type] as Card[];
+                cards => {                    
+                    
+                    this.cards = cards as Card[];                  
                     console.log(this.cards);                                        
                 },
                 err => {

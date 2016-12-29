@@ -23,7 +23,20 @@ export class CardService {
     }
 
     getAllCardsByType(type: string): Observable<Card[] | Card> {
-    return this.requester.getFromApi(`${this.baseUrl}cards`, this.options);
+        return this.requester.getFromApi(`${this.baseUrl}cards`, this.options).map(
+            (allCards) => {
+                let cards = allCards[type];
+                let result = [];
+                console.log(cards);
+                for(let i = 0; i < cards.length; i++) {
+                    if(!(cards[i].type == "Enchantment" || cards[i].type == "Hero" ||
+                    cards[i].type == "Hero Power" || cards[i].name == "The Coin")) {                        
+                        result.push(cards[i]);
+                    }                    
+                }              
+                return result;
+            }
+        );
     }
 
     getCardByName(name: string, type: string) : Observable<Card[] | Card> {
