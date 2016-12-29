@@ -6,5 +6,18 @@ import { NotFoundComponent } from  "./components/404NotFound/404.component";
 import { CardsComponent } from "./components/cards/cards.component";
 import { DecksComponent } from "./components/decks/decks.component";
 import { CardInfoComponent } from "./components/card-info/card-info.component";
+import { DeckBuilderComponent } from "./components/deckBuilder/deckBuilder.component"
+import { UnauthorizedComponent } from "./components/unauthorized/unauthorized.component"
 
-export { AppComponent, HomeComponent, HeroesComponent, ProfileComponent, NotFoundComponent, CardsComponent, DecksComponent, CardInfoComponent };
+export {
+    AppComponent,
+    HomeComponent,
+    HeroesComponent,
+    ProfileComponent,
+    NotFoundComponent,
+    CardsComponent,
+    DecksComponent,
+    CardInfoComponent,
+    DeckBuilderComponent,
+    UnauthorizedComponent
+};

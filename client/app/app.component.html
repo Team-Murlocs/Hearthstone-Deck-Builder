@@ -2,11 +2,9 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Hearthstone Deck Builder</span>
+      <span class="mdl-layout-title mdl-navigation__link" routerLink="/">Hearthstone Deck Builder</span>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" routerLink="/">Home</a>
-        <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>       
-
+        <!--<a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>-->
         <a id="demo-menu-lower-left" class="mdl-navigation__link">Cards</a> <!-- TODO: link must cnage mouse cursor -->
         <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
           <li class="mdl-menu__item"><a routerLink="/cards/Basic">Basic</a></li>
@@ -17,7 +15,7 @@
           <li class="mdl-menu__item"><a routerLink="/cards">Goblins vs Gnomes</a></li>
           <li class="mdl-menu__item"><a routerLink="/cards">Blackrock Mountain</a></li>
           <li class="mdl-menu__item"><a routerLink="/cards">The Grand Mountain</a></li>
-          <li class="mdl-menu__item"><a routerLink="/cards">The League of Explorers</a></li>          
+          <li class="mdl-menu__item"><a routerLink="/cards">The  League of Explorers</a></li>          
         </ul>
        
       <a class="mdl-navigation__link" routerLink="/decks">Decks</a>
@@ -26,7 +24,8 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" routerLink="/profile" *ngIf="auth.authenticated()">Profile</a>        
+        <a class="mdl-navigation__link" routerLink="/profile" *ngIf="auth.authenticated()">Profile</a>
+        <a class="mdl-navigation__link" routerLink="/deckBuilder" *ngIf="auth.authenticated()">Build a deck</a>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</button>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="auth.logout()" *ngIf="auth.authenticated()">Logout</button>
       </nav>

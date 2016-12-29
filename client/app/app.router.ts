@@ -11,6 +11,8 @@ const appRoutes = [
     { path: "cards/:type", component: Components.CardsComponent },
     { path: "cards/name/:name", component: Components.CardInfoComponent },
     { path: "decks", component: Components.DecksComponent },
+    { path: "deckBuilder", component: Components.DeckBuilderComponent, canActivate: [AuthGuard] },
+    { path: "unauthorized", component: Components.UnauthorizedComponent },
     { path: "**", component: Components.NotFoundComponent }
 ];
 

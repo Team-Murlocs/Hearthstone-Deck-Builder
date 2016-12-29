@@ -5,6 +5,7 @@ import { Auth } from './services/auth.service'
     templateUrl: 'app.component.html',
     styles: [`
         #demo-menu-lower-left { cursor: pointer; }
+        .mdl-layout-title { cursor: pointer; }
     `]
 })
 export class AppComponent {
