@@ -18,7 +18,7 @@ export class Auth {
   constructor() {
     // Add callback for lock `authenticated` event
     this.lock.on("authenticated", (authResult) => {
-      this.lock.getProfile(authResult.idToken, function(error:any, profile:any){
+      this.lock.getUserInfo(authResult.idToken, function(error:any, profile:any){
         if (error) {
           throw new Error(error);
         }
