@@ -10,7 +10,7 @@ const appRoutes = [
     { path: "profile", component: Components.ProfileComponent, canActivate: [AuthGuard] },
     { path: "cards/:number", component: Components.CardsComponent },
     { path: "cards/:number/:name", component: Components.CardInfoComponent },
-    { path: "heroes/cards/:class", component: Components.DeckBuilderComponent }
+    { path: "heroes/cards/:class", component: Components.DeckBuilderComponent },
     { path: "decks", component: Components.DecksComponent },    
     { path: "unauthorized", component: Components.UnauthorizedComponent },
     { path: "**", component: Components.NotFoundComponent }

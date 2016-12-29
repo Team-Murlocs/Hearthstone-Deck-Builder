@@ -1,15 +1,66 @@
+<!--<div class="columns">
+    <div class="column">
+        <label class="control">Filter items
+            <input type="text" class="input" placeholder="filter" [(ngModel)]="filter">
+        </label>
+    </div>
+    <div class="columns push-pop">
+        <button class="button small" (click)="pushItem()">Add Item</button>
+        <button class="button small" (click)="popItem()">Remove Item</button>
+    </div>
+</div>
+<div class="columns">
+    <div class="column">
+        <label class="control">itemsPerPage
+            <input type="number" class="input" min="0" [(ngModel)]="config.itemsPerPage">
+        </label>
+    </div>
+    <div class="column">
+        <label class="control">currentPage
+            <input type="number" class="input" min="0" [(ngModel)]="config.currentPage">
+        </label>
+    </div>
+    <div class="column">
+        <label class="control">maxSize
+            <input type="number" class="input" min="5" max="100" [(ngModel)]="maxSize">
+        </label>
+    </div>
+    <div class="column control checkboxes">
+        <label class="checkbox">
+            <input type="checkbox" class="checkbox" [(ngModel)]="directionLinks">
+            directionLinks
+        </label><br>
+        <label class="checkbox">
+            <input type="checkbox" class="checkbox" [(ngModel)]="autoHide">
+            autoHide
+        </label>
+    </div>
+</div>
+-->
+
+
+
 <div class="cards">
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
         <main class="mdl-layout__content">
             <div class="mdl-grid">
-                <div *ngFor="let card of cards" [attr.card]="card">                    
-                    <div *ngIf="card.type != 'Enchantment' && card.type != 'Hero' && card.type != 'Hero Power' && card.name != 'The Coin'">
+                <div *ngFor="let card of cards | paginate: config" [attr.card]="card">                    
+                    <!--<div *ngIf="card.type != 'Enchantment' && card.type != 'Hero' && card.type != 'Hero Power' && card.name != 'The Coin'">-->
+                    <div *ngIf="card.type != 'Encahntment'">
                         <div class="mdl-cell mdl-cell--2-col" routerLink="{{card.name}}" >                             
                             <img src="{{card.img}}" alt="{{card.name}}"/>
-                        </div> 
+                        </div>
                     </div>                    
                 </div>
             </div>
         </main>
     </div>
+</div>
+
+<div class="has-text-centered">
+    <pagination-controls [id]="config.id"
+                         [maxSize]="maxSize"
+                         [directionLinks]="directionLinks"
+                         [autoHide]="autoHide"
+                         (pageChange)="onPageChange($event)"></pagination-controls>
 </div>

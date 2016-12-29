@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { CardService } from "../../services/card.service";
 import { Card } from "../../models/card";
 import { Router, Params, Route, ActivatedRoute } from "@angular/router"
 import { sets } from "../../utils/sets";
+import { PaginationInstance } from "ng2-pagination";
 
 @Component({
     selector: "cards",
@@ -44,6 +45,27 @@ import { sets } from "../../utils/sets";
 })
 
 export class CardsComponent implements OnInit {
+
+    
+    //Pagination
+
+    public filter: string = '';
+    public maxSize: number = 7;
+    public directionLinks: boolean = true;
+    public autoHide: boolean = false;
+    public config: PaginationInstance = {
+
+        id: 'advanced',
+
+        itemsPerPage: 20,
+
+        currentPage: 1
+    };
+
+
+    //
+
+
     cards: Card[];
     error: any;
     cardType: string;
@@ -63,9 +85,12 @@ export class CardsComponent implements OnInit {
             this.utilsNumber = params["number"];
             this.type = sets[this.utilsNumber];                    
             this.showCards(this.type); 
-        });         
+        });   
+
+           
     }
 
+    @Input('cardsAll') cardsAll: Card[] = this.cards;   
     showCards(type) {
         this.cardService.getAllCardsByType(type)
             .subscribe(
@@ -78,6 +103,11 @@ export class CardsComponent implements OnInit {
                     console.log(err);
                 }
             )
+    }
+
+     onPageChange(number: number) {
+        console.log('change to page', number);
+        this.config.currentPage = number;
     }
 
 };
