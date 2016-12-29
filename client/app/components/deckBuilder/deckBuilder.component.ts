@@ -3,6 +3,7 @@ import { Auth } from "../../services/auth.service"
 import { Router, Params, Route, ActivatedRoute } from "@angular/router";
 import { CardService } from "../../services/card.service";
 import { Card } from "../../models/card";
+import { PaginationInstance } from "ng2-pagination";
 
 @Component({    
     selector: "cardsByClass",
@@ -44,6 +45,25 @@ import { Card } from "../../models/card";
 
 export class DeckBuilderComponent implements OnInit {
 
+     //Pagination
+
+    public filter: string = '';
+    public maxSize: number = 7;
+    public directionLinks: boolean = true;
+    public autoHide: boolean = false;
+    public config: PaginationInstance = {
+
+        id: 'advanced',
+
+        itemsPerPage: 20,
+
+        currentPage: 1
+    };
+
+
+    //
+
+
     cards: Card[]
 
     cardClass: string;   
@@ -56,6 +76,11 @@ export class DeckBuilderComponent implements OnInit {
             this.cardClass = params["class"];
             this.showCardByClass(this.cardClass);
         });
+    }
+
+      onPageChange(number: number) {
+        console.log('change to page', number);
+        this.config.currentPage = number;
     }
 
     showCardByClass(playerClass) {
