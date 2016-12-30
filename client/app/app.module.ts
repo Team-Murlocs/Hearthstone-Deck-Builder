@@ -25,7 +25,6 @@ import { Ng2PaginationModule } from "ng2-pagination";
         Components.DecksComponent,
         Components.CardInfoComponent,
         Components.DeckBuilderComponent,
-        Components.DeckHolderComponent,
         Components.UnauthorizedComponent
         ], // declare all derectives and components
     bootstrap: [Components.AppComponent], // root component to bootstarp

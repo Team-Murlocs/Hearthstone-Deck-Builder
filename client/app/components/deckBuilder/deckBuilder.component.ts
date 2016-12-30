@@ -1,10 +1,9 @@
-import { Component, OnInit } from "@angular/core"
+import { Component, OnInit, Input } from "@angular/core"
 import { Auth } from "../../services/auth.service"
 import { Router, Params, Route, ActivatedRoute } from "@angular/router";
 import { CardService } from "../../services/card.service";
 import { Card } from "../../models/card";
 import { PaginationInstance } from "ng2-pagination";
-import { DeckHolderComponent } from "./../../component-loader"
 
 @Component({
     selector: "cardsByClass",
@@ -47,6 +46,9 @@ import { DeckHolderComponent } from "./../../component-loader"
         .mdl-cell img {
             cursor: pointer;
         }
+        .mdl-list__item {
+            cursor: pointer;
+        }
     `]
 })
 
@@ -67,24 +69,20 @@ export class DeckBuilderComponent implements OnInit {
     };
     //
 
-    cardsInDeck = [
-        { title: "Outside Card", index: 0},
-        { title: "Sample Card", index: 1},
-        { title: "Sample Card", index: 2},
-        { title: "Sample Card", index: 3},
-        { title: "Sample Card", index: 4},
-        { title: "Sample Card", index: 5}
+    @Input() cardsInDeck = [
     ]
 
-    addCardInDeck(card) {
-        console.log(card)
+    addCardInDeck(cardTitle, cardId) {
+        var card = { title: cardTitle, id: cardId }
         this.cardsInDeck.push(card)
-        console.log(this.cardsInDeck)
     }
 
-    removeCardInDeck(index) {
-        this.cardsInDeck.slice(index, 1)
-        console.log(this.cardsInDeck)
+    removeCardInDeck(cardId) {
+        var search = this.cardsInDeck.filter(function (card) {
+            return card.id == cardId;
+        });
+        let index = this.cardsInDeck.indexOf(search[0])
+        this.cardsInDeck.splice(index, 1)
     }
 
     cards: Card[]

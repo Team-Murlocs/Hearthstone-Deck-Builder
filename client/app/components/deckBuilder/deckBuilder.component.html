@@ -2,13 +2,23 @@
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
         <main class="mdl-layout__content">
             <div class="mdl-grid">
-                <deckHolder class="mdl-cell mdl-cell--3-col mdl-color--grey-300 mdl-shadow--2dp"></deckHolder>
+                <div class="mdl-cell mdl-cell--3-col mdl-color--grey-300 mdl-shadow--2dp">
+                    <h4>Deck</h4>
+                    <hr>
+                    <ul class="demo-list-item mdl-list">                        
+                        <li class="mdl-list__item" *ngFor='let cardInDeck of cardsInDeck'>
+                            <span class="mdl-list__item-primary-content" (click)="removeCardInDeck(cardInDeck.id)">
+                                {{cardInDeck.title}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
                 <div class="mdl-cell mdl-cell--1-col">
                 </div>
                 <div class="mdl-cell mdl-cell--8-col">
                     <div class="mdl-grid">
                         <div *ngFor="let card of cards | paginate: config" [attr.card]="card">
-                            <div class="mdl-cell mdl-cell--2-col" (click)="addCardInDeck(card.name)">   
+                            <div class="mdl-cell mdl-cell--2-col" (click)="addCardInDeck(card.name, card.cardId)">   
                                 <img src="{{card.img}}" alt="{{card.name}}"/>
                             </div>         
                         </div>

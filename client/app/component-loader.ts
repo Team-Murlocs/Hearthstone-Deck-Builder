@@ -7,7 +7,6 @@ import { CardsComponent } from "./components/cards/cards.component";
 import { DecksComponent } from "./components/decks/decks.component";
 import { CardInfoComponent } from "./components/card-info/card-info.component";
 import { DeckBuilderComponent } from "./components/deckBuilder/deckBuilder.component"
-import { DeckHolderComponent } from "./components/deckHolder/deckHolder.component"
 import { UnauthorizedComponent } from "./components/unauthorized/unauthorized.component"
 
 export {
@@ -20,6 +19,5 @@ export {
     DecksComponent,
     CardInfoComponent,
     DeckBuilderComponent,
-    DeckHolderComponent,
     UnauthorizedComponent
 };
