@@ -6,49 +6,9 @@
                     <h4>  Deck</h4>
                     <hr>
                     <ul class="demo-list-item mdl-list">                        
-                        <li class="mdl-list__item">
+                        <li class="mdl-list__item" *ngFor='let cardInDeck of cardsInDeck'>
                             <span class="mdl-list__item-primary-content">
-                            Sample Card
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            Sample Card
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            Sample Card
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            Sample Card
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            Sample Card
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            Sample Card
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            Sample Card
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            Sample Card
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            Sample Card
+                                {{cardInDeck.title}}
                             </span>
                         </li>
                     </ul>
@@ -58,7 +18,7 @@
                 <div class="mdl-cell mdl-cell--8-col">
                     <div class="mdl-grid">
                         <div *ngFor="let card of cards | paginate: config" [attr.card]="card">
-                            <div class="mdl-cell mdl-cell--2-col" >   
+                            <div class="mdl-cell mdl-cell--2-col" (click)="addCardInDeck(card.name)">   
                                 <img src="{{card.img}}" alt="{{card.name}}"/>
                             </div>         
                         </div>

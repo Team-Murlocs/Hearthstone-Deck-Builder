@@ -1,14 +1,14 @@
-import { Component, OnInit} from "@angular/core"
+import { Component, OnInit } from "@angular/core"
 import { Auth } from "../../services/auth.service"
 import { Router, Params, Route, ActivatedRoute } from "@angular/router";
 import { CardService } from "../../services/card.service";
 import { Card } from "../../models/card";
 import { PaginationInstance } from "ng2-pagination";
 
-@Component({    
+@Component({
     selector: "cardsByClass",
     templateUrl: "deckBuilder.component.html",
-    styles:  [`
+    styles: [`
         h4 {
             text-align: center;
         }
@@ -43,12 +43,15 @@ import { PaginationInstance } from "ng2-pagination";
         img {
             max-width: 155px;
         }
-        `]
+        .mdl-cell img {
+            cursor: pointer;
+        }
+    `]
 })
 
 export class DeckBuilderComponent implements OnInit {
 
-     //Pagination
+    //Pagination
 
     public filter: string = '';
     public maxSize: number = 7;
@@ -65,11 +68,26 @@ export class DeckBuilderComponent implements OnInit {
 
 
     //
+    
 
+    cardsInDeck = [
+        { title: "Sample Card"},
+        { title: "Sample Card"},
+        { title: "Sample Card"},
+        { title: "Sample Card"},
+        { title: "Sample Card"},
+        { title: "Sample Card"}
+    ]
+
+    addCardInDeck(card) {
+        console.log(card)
+        this.cardsInDeck.push(card)
+        console.log(this.cardsInDeck)
+    }
 
     cards: Card[]
 
-    cardClass: string;   
+    cardClass: string;
 
     constructor(private cardService: CardService, private route: ActivatedRoute) {
     }
@@ -81,7 +99,7 @@ export class DeckBuilderComponent implements OnInit {
         });
     }
 
-      onPageChange(number: number) {
+    onPageChange(number: number) {
         console.log('change to page', number);
         this.config.currentPage = number;
     }
@@ -89,18 +107,18 @@ export class DeckBuilderComponent implements OnInit {
     showCardByClass(playerClass) {
         this.cardService.getCardByClass(playerClass)
             .subscribe(
-                cards => {                    
-                    this.cards = cards as Card[];
-                    this.cardService.getCardByClass("Neutral")
-                        .subscribe(
-                            neutralCards => {
-                                this.cards = this.cards.concat(neutralCards)
-                            }
-                        )
-                },
-                err => {
-                    console.log(err);
-                }
+            cards => {
+                this.cards = cards as Card[];
+                this.cardService.getCardByClass("Neutral")
+                    .subscribe(
+                    neutralCards => {
+                        this.cards = this.cards.concat(neutralCards)
+                    }
+                    )
+            },
+            err => {
+                console.log(err);
+            }
             )
     }
 }
