@@ -46,16 +46,15 @@ import { PaginationInstance } from "ng2-pagination";
 
 export class CardsComponent implements OnInit {
 
-    
-    //Pagination
+    // Pagination
 
-    public filter: string = '';
+    public filter: string = "";
     public maxSize: number = 7;
     public directionLinks: boolean = true;
     public autoHide: boolean = false;
     public config: PaginationInstance = {
 
-        id: 'advanced',
+        id: "advanced",
 
         itemsPerPage: 20,
 
@@ -75,7 +74,7 @@ export class CardsComponent implements OnInit {
     type: string = "Basic";
 
 
-   
+
     constructor(private cardService: CardService, private route: ActivatedRoute,
   private router: Router) {
     }
@@ -104,9 +103,9 @@ export class CardsComponent implements OnInit {
             )
     }
 
-     onPageChange(number: number) {
-        console.log('change to page', number);
-        this.config.currentPage = number;
+     onPageChange(pageNumber: number) {
+        console.log("change to page", pageNumber);
+        this.config.currentPage = pageNumber;
     }
 
 };

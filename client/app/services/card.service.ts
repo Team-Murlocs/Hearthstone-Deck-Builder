@@ -13,7 +13,7 @@ export class CardService {
     public options = new RequestOptions({ headers: this.headersMashape});
 
     private card: Card;
-   
+
     private requester: Requester<Card>;
     constructor(requester: Requester<Card>) {
         this.requester = requester;
@@ -29,7 +29,7 @@ export class CardService {
                 let cards = allCards[type];
                 let result = [];
                 console.log(cards);
-                for(let i = 0; i < cards.length; i++) {
+                for (let i = 0; i < cards.length; i++) {
                     this.card = cards[i];
                     if (cards[i].type !== "Enchantment" && cards[i].type !== "Hero" && cards[i].type !== "Hero Power" && cards[i].name !== "The Coin"
                         && cards[i].cardSet !== "Tavern Brawl" && cards[i].cardSet !== "Hero Skins"
@@ -43,17 +43,17 @@ export class CardService {
         );
     }
 
-    getCardById(name: string, type: string) : Observable<Card[] | Card> {
+    getCardById(name: string, type: string): Observable<Card[] | Card> {
         return this.requester.getFromApi(`${this.baseUrl}cards/${name}`, this.options);
     }
 
-    getCardByClass(playerClass: string) : Observable<Card[] | Card> {
+    getCardByClass(playerClass: string): Observable<Card[] | Card> {
         return this.requester.getFromApi(`${this.baseUrl}cards/classes/${playerClass}`, this.options).map(
             (allCards) => {
                 let cards = allCards as Card[];
                 let result = [];
-                for(let i = 0; i < cards.length; i++) {
-                    if(cards[i].type !== "Enchantment" && cards[i].type !== "Hero" && cards[i].type !== "Hero Power" && cards[i].name !== "The Coin"
+                for (let i = 0; i < cards.length; i++) {
+                    if (cards[i].type !== "Enchantment" && cards[i].type !== "Hero" && cards[i].type !== "Hero Power" && cards[i].name !== "The Coin"
                         && cards[i].cardSet !== "Tavern Brawl" && cards[i].cardSet !== "Hero Skins"
                         && cards[i].cardSet !== "Missions" && cards[i].cardSet !== "Credits"
                         && cards[i].cardSet !== "System" && cards[i].cardSet !== "Debug") {
