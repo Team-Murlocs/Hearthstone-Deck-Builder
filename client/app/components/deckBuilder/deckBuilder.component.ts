@@ -9,8 +9,11 @@ import { PaginationInstance } from "ng2-pagination";
     selector: "cardsByClass",
     templateUrl: "deckBuilder.component.html",
     styles:  [`
+        h4 {
+            text-align: center;
+        }
         .mdl-grid {
-            max-width: 1000px;
+            max-width: 1400px;
         }
         .mdl-card {
             max-width: 200px;
@@ -38,7 +41,7 @@ import { PaginationInstance } from "ng2-pagination";
             background-color: #fff
         }
         img {
-            max-width: 170px;
+            max-width: 155px;
         }
         `]
 })
