@@ -6,14 +6,31 @@ import { sets } from "../../utils/sets";
 
 @Component({
     selector: "card-info",
-    templateUrl: "card-info.component.html"
+    templateUrl: "card-info.component.html",
+    styles: [`
+        .demo-card-image.mdl-card {
+            width: 256px;
+            height: 256px;
+            background: url('../assets/demos/image_card.jpg') center / cover;
+        }
+        .demo-card-image > .mdl-card__actions {
+            height: 52px;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .demo-card-image__filename {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    `]
 })
 
 export class CardInfoComponent implements OnInit {
 
     cards: Card[]
 
-    name: string;
+    id: string;
 
     type: string;
 
@@ -21,16 +38,16 @@ export class CardInfoComponent implements OnInit {
     }
     ngOnInit() {
         this.route.params.subscribe(params => {
-            this.name = params["name"];
+            this.id = params["name"];
             this.type = sets[params["type"]];
             console.log("name");
-            console.log(this.name);
-            this.showCardInfo(this.name, this.type);
+            console.log(this.id);
+            this.showCardInfo(this.id, this.type);
         });
     } 
 
-    showCardInfo(name, type) {
-        this.cardService.getCardByName(name, type)
+    showCardInfo(id, type) {
+        this.cardService.getCardById(id, type)
             .subscribe(                 
                 cards => {
                     this.cards = cards as Card[];
