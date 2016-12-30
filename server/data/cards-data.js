@@ -16,6 +16,6 @@ module.exports = function(models) {
         },
         getAllCards() {
 
-        }        
+        }
     };
 };

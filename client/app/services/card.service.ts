@@ -1,7 +1,5 @@
 import { Injectable } from "@angular/core"
 import { Http, Response, Headers, RequestOptions }  from "@angular/http";
-import "rxjs/add/operator/toPromise";
-import "rxjs/add/operator/map";
 import {  Observable } from "rxjs/Rx";
 import { Card } from "../models/card";
 import { Requester } from "./requester.service";
