@@ -46,7 +46,7 @@ import { PaginationInstance } from "ng2-pagination";
         .mdl-cell img {
             cursor: pointer;
         }
-        .mdl-list__item {
+        .mdl-list__item-primary-content {
             cursor: pointer;
         }
     `]
@@ -69,20 +69,41 @@ export class DeckBuilderComponent implements OnInit {
     };
     //
 
-    @Input() cardsInDeck = [
-    ]
+    @Input() cardsInDeck = []
+    cardsCount = 0
 
-    addCardInDeck(cardTitle, cardId) {
-        var card = { title: cardTitle, id: cardId }
-        this.cardsInDeck.push(card)
+    addCardInDeck(cardTitle, cardId, rarity) {
+        let search = this.cardsInDeck.filter(function (card) {
+            return card.id == cardId;
+        });
+
+        let index = this.cardsInDeck.indexOf(search[0])
+        if (this.cardsCount < 30) {
+            if (index >= 0) {
+                if (this.cardsInDeck[index].count < 2 && this.cardsInDeck[index].rarity != "Legendary") {
+                    this.cardsInDeck[index].count++
+                    this.cardsCount++
+                }
+            } else {
+                let card = { title: cardTitle, rarity: rarity, id: cardId, count: 1 }
+                this.cardsInDeck.push(card)
+                this.cardsCount++
+            }
+        }
     }
 
     removeCardInDeck(cardId) {
-        var search = this.cardsInDeck.filter(function (card) {
+        let search = this.cardsInDeck.filter(function (card) {
             return card.id == cardId;
         });
+
         let index = this.cardsInDeck.indexOf(search[0])
-        this.cardsInDeck.splice(index, 1)
+        this.cardsInDeck[index].count--
+        this.cardsCount--
+        
+        if (this.cardsInDeck[index].count == 0) {
+            this.cardsInDeck.splice(index, 1)
+        }
     }
 
     cards: Card[]
