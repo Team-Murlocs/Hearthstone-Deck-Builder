@@ -63,7 +63,7 @@ export class CardsComponent implements OnInit {
     };
 
 
-    //
+    // End Pagination
 
 
     cards: Card[];
@@ -83,20 +83,19 @@ export class CardsComponent implements OnInit {
      ngOnInit() {
         this.route.params.subscribe(params => {
             this.utilsNumber = params["number"];
-            this.type = sets[this.utilsNumber];                    
-            this.showCards(this.type); 
-        });   
+            this.type = sets[this.utilsNumber];
+            this.showCards(this.type);
+        });
 
-           
     }
 
     showCards(type) {
-        this.cardService.getAllCardsByType(type)            
+        this.cardService.getAllCardsByType(type)
             .subscribe(
-                cards => {                    
-                    
-                    this.cards = cards as Card[];                  
-                    console.log(this.cards);                                        
+                cards => {
+
+                    this.cards = cards as Card[];
+                    console.log(this.cards);
                 },
                 err => {
                     console.log("Error")

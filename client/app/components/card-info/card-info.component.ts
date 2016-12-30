@@ -44,20 +44,20 @@ export class CardInfoComponent implements OnInit {
             console.log(this.id);
             this.showCardInfo(this.id, this.type);
         });
-    } 
+    }
 
     showCardInfo(id, type) {
         this.cardService.getCardById(id, type)
-            .subscribe(                 
+            .subscribe(
                 cards => {
                     this.cards = cards as Card[];
                     console.log("Card");
-                    console.log(this.cards);                                        
+                    console.log(this.cards);
                 },
                 err => {
                     console.log("Error")
                     console.log(err);
-                }            
+                }
             )
-    } 
+    }
 }
