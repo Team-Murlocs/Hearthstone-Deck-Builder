@@ -4,6 +4,8 @@ import { Card } from "../../models/card";
 import { Router, Params, Route, ActivatedRoute } from "@angular/router"
 import { sets } from "../../utils/sets";
 import { PaginationInstance } from "ng2-pagination";
+import {Event as RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError} from '@angular/router';
+
 
 @Component({
     selector: "cards",
@@ -75,8 +77,31 @@ export class CardsComponent implements OnInit {
 
 
 
+    // Sets initial value to true to show loading spinner on first load
+    loading: boolean = true;
+
     constructor(private cardService: CardService, private route: ActivatedRoute,
   private router: Router) {
+      router.events.subscribe((event: RouterEvent) => {
+            this.navigationInterceptor(event);
+        });
+    }
+ // Shows and hides the loading spinner during RouterEvent changes
+    navigationInterceptor(event: RouterEvent): void {
+        if (event instanceof NavigationStart) {
+            this.loading = true;
+        }
+        if (event instanceof NavigationEnd) {
+            this.loading = true;
+        }
+
+        // Set loading state to false in both of the below events to hide the spinner in case a request fails
+        if (event instanceof NavigationCancel) {
+            this.loading = true;
+        }
+        if (event instanceof NavigationError) {
+            this.loading = true;
+        }
     }
 
      ngOnInit() {
@@ -94,6 +119,7 @@ export class CardsComponent implements OnInit {
                 cards => {
 
                     this.cards = cards as Card[];
+		    this.loading=false;        
                     console.log(this.cards);
                 },
                 err => {
