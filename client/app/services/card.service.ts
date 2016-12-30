@@ -41,8 +41,8 @@ export class CardService {
         );
     }
 
-    getCardByName(name: string, type: string) : Observable<Card[] | Card> {
-        return this.requester.getFromApi(`${this.baseUrl}cards/search/${name}`, this.options);
+    getCardById(name: string, type: string) : Observable<Card[] | Card> {
+        return this.requester.getFromApi(`${this.baseUrl}cards/${name}`, this.options);
     }
 
     getCardByClass(playerClass: string) : Observable<Card[] | Card> {
