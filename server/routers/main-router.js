@@ -4,6 +4,10 @@ module.exports = function (server, controller) {
         res.sendFile(path.join(__dirname + "/../../dist/index.html"));
     });
     server.get("/cards", function(req, res) {
-        //getAllCardsHere        
+        // getAllCardsHere
+    });
+
+    server.post("/api/postDeck", function(req, res) {
+        //post deck to user;
     });
 };

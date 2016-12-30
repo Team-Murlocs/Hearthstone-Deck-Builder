@@ -24,4 +24,10 @@ export class Requester<T> {
         .get(url, options)
         .map(res => res.json());
     }
+
+    public post(url: string, item: any, options: RequestOptions): Observable<T> {
+        return this.http
+            .post(url, item, options)
+            .map(res => res.json());
+    }
 }
