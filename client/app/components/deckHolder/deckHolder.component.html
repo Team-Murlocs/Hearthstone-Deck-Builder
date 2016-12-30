@@ -1,0 +1,9 @@
+<h4>Deck</h4>
+<hr>
+<ul class="demo-list-item mdl-list">                        
+    <li class="mdl-list__item" *ngFor='let cardInDeck of cardsInDeck'>
+        <span class="mdl-list__item-primary-content" (click)="removeCardInDeck(cardInDeck.index)">
+            {{cardInDeck.title}}
+        </span>
+    </li>
+</ul>

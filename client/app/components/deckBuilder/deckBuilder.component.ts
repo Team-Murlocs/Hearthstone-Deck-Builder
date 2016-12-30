@@ -4,6 +4,7 @@ import { Router, Params, Route, ActivatedRoute } from "@angular/router";
 import { CardService } from "../../services/card.service";
 import { Card } from "../../models/card";
 import { PaginationInstance } from "ng2-pagination";
+import { DeckHolderComponent } from "./../../component-loader"
 
 @Component({
     selector: "cardsByClass",
@@ -68,20 +69,23 @@ export class DeckBuilderComponent implements OnInit {
 
 
     //
-    
-
     cardsInDeck = [
-        { title: "Sample Card"},
-        { title: "Sample Card"},
-        { title: "Sample Card"},
-        { title: "Sample Card"},
-        { title: "Sample Card"},
-        { title: "Sample Card"}
+        { title: "Outside Card", index: 0},
+        { title: "Sample Card", index: 1},
+        { title: "Sample Card", index: 2},
+        { title: "Sample Card", index: 3},
+        { title: "Sample Card", index: 4},
+        { title: "Sample Card", index: 5}
     ]
 
     addCardInDeck(card) {
         console.log(card)
         this.cardsInDeck.push(card)
+        console.log(this.cardsInDeck)
+    }
+
+    removeCardInDeck(index) {
+        this.cardsInDeck.slice(index, 1)
         console.log(this.cardsInDeck)
     }
 

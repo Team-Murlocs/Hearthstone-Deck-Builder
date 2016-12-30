@@ -2,17 +2,7 @@
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
         <main class="mdl-layout__content">
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--3-col mdl-color--grey-300 mdl-shadow--2dp">
-                    <h4>  Deck</h4>
-                    <hr>
-                    <ul class="demo-list-item mdl-list">                        
-                        <li class="mdl-list__item" *ngFor='let cardInDeck of cardsInDeck'>
-                            <span class="mdl-list__item-primary-content">
-                                {{cardInDeck.title}}
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+                <deckHolder class="mdl-cell mdl-cell--3-col mdl-color--grey-300 mdl-shadow--2dp"></deckHolder>
                 <div class="mdl-cell mdl-cell--1-col">
                 </div>
                 <div class="mdl-cell mdl-cell--8-col">
