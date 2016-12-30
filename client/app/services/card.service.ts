@@ -12,7 +12,8 @@ export class CardService {
     private headersMashape = new Headers({"X-Mashape-Key": "a0NtL810oxmshwn6kFSSmZXRQZIVp1OrEpdjsno3N9GQVZSHzD"});
     public options = new RequestOptions({ headers: this.headersMashape});
 
-    
+    private card: Card;
+   
     private requester: Requester<Card>;
     constructor(requester: Requester<Card>) {
         this.requester = requester;
@@ -29,13 +30,14 @@ export class CardService {
                 let result = [];
                 console.log(cards);
                 for(let i = 0; i < cards.length; i++) {
-                    if(cards[i].type != 'Enchantment' && cards[i].type != 'Hero' && cards[i].type != 'Hero Power' && cards[i].name != 'The Coin'
-                        && cards[i].cardSet != 'Tavern Brawl' && cards[i].cardSet != 'Hero Skins'
-                        && cards[i].cardSet != 'Missions' && cards[i].cardSet != 'Credits'
-                        && cards[i].cardSet != 'System' && cards[i].cardSet != 'Debug') {                        
+                    this.card = cards[i];
+                    if (cards[i].type !== "Enchantment" && cards[i].type !== "Hero" && cards[i].type !== "Hero Power" && cards[i].name !== "The Coin"
+                        && cards[i].cardSet !== "Tavern Brawl" && cards[i].cardSet !== "Hero Skins"
+                        && cards[i].cardSet !== "Missions" && cards[i].cardSet !== "Credits"
+                        && cards[i].cardSet !== "System" && cards[i].cardSet !== "Debug") {
                         result.push(cards[i]);
-                    }                    
-                }              
+                    }
+                }
                 return result;
             }
         );
@@ -51,13 +53,13 @@ export class CardService {
                 let cards = allCards as Card[];
                 let result = [];
                 for(let i = 0; i < cards.length; i++) {
-                    if(cards[i].type != 'Enchantment' && cards[i].type != 'Hero' && cards[i].type != 'Hero Power' && cards[i].name != 'The Coin'
-                        && cards[i].cardSet != 'Tavern Brawl' && cards[i].cardSet != 'Hero Skins'
-                        && cards[i].cardSet != 'Missions' && cards[i].cardSet != 'Credits'
-                        && cards[i].cardSet != 'System' && cards[i].cardSet != 'Debug') {                        
+                    if(cards[i].type !== "Enchantment" && cards[i].type !== "Hero" && cards[i].type !== "Hero Power" && cards[i].name !== "The Coin"
+                        && cards[i].cardSet !== "Tavern Brawl" && cards[i].cardSet !== "Hero Skins"
+                        && cards[i].cardSet !== "Missions" && cards[i].cardSet !== "Credits"
+                        && cards[i].cardSet !== "System" && cards[i].cardSet !== "Debug") {
                         result.push(cards[i]);
-                    }                    
-                }        
+                    }
+                }
 
                 return result;
             }
