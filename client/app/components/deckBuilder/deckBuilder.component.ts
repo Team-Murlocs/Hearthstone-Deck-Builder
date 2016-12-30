@@ -52,23 +52,21 @@ import { DeckHolderComponent } from "./../../component-loader"
 
 export class DeckBuilderComponent implements OnInit {
 
-    //Pagination
-
-    public filter: string = '';
+    // Pagination
+    public filter: string = "";
     public maxSize: number = 7;
     public directionLinks: boolean = true;
     public autoHide: boolean = false;
     public config: PaginationInstance = {
 
-        id: 'advanced',
+        id: "advanced",
 
         itemsPerPage: 20,
 
         currentPage: 1
     };
-
-
     //
+
     cardsInDeck = [
         { title: "Outside Card", index: 0},
         { title: "Sample Card", index: 1},
@@ -103,9 +101,9 @@ export class DeckBuilderComponent implements OnInit {
         });
     }
 
-    onPageChange(number: number) {
-        console.log('change to page', number);
-        this.config.currentPage = number;
+    onPageChange(pageNumber: number) {
+        console.log("change to page", pageNumber);
+        this.config.currentPage = pageNumber;
     }
 
     showCardByClass(playerClass) {
