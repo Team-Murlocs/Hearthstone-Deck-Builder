@@ -44,28 +44,24 @@
     <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
         <main class="mdl-layout__content">
             <div class="mdl-grid">
-                <div *ngFor="let card of cards | paginate: config" [attr.card]="card">                    
-                    <!--<div *ngIf="card.type != 'Enchantment' && card.type != 'Hero' && card.type != 'Hero Power' && card.name != 'The Coin'">-->                   
-                    <div class="mdl-cell mdl-cell--2-col" routerLink="{{card.cardId}}" >                             
-                        <img src="{{card.img}}" alt="{{card.name}}"/>
-                    </div>                                   
+                <div class="" *ngIf="loading">
+                    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+                </div>
+                <div *ngFor="let card of cards | paginate: config" [attr.card]="card">
+                    <!--<div *ngIf="card.type != 'Enchantment' && card.type != 'Hero' && card.type != 'Hero Power' && card.name != 'The Coin'">-->
+                    <div class="mdl-cell mdl-cell--2-col" routerLink="{{card.cardId}}">
+                        <img src="{{card.img}}" alt="{{card.name}}" />
+                    </div>
                 </div>
             </div>
         </main>
     </div>
 </div>
 
-<div class="has-text-centered">
-    <div class="" *ngIf="loading">
-        <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
-		
-    </div>
-</div>
+
+
+
 
 <div class="has-text-centered">
-    <pagination-controls [id]="config.id"
-                         [maxSize]="maxSize"
-                         [directionLinks]="directionLinks"
-                         [autoHide]="autoHide"
-                         (pageChange)="onPageChange($event)"></pagination-controls>
+    <pagination-controls [id]="config.id" [maxSize]="maxSize" [directionLinks]="directionLinks" [autoHide]="autoHide" (pageChange)="onPageChange($event)"></pagination-controls>
 </div>
