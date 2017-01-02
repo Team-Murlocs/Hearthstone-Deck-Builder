@@ -41,8 +41,6 @@ module.exports = function(models) {
                         return resolve(deck);
                     });
             });
-        }, 
-
-        removeDeck()
+        }
     };
 };
