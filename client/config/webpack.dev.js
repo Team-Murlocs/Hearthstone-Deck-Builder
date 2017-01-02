@@ -6,7 +6,7 @@ module.exports = webpackMerge(commonConfig, {
     devtool: 'source-map',
     output: {
         path: helpers.root('../dist'),
-        publicPath: 'https://tranquil-beyond-86557.herokuapp.com/',
+        publicPath: 'http://localhost:3000/',
         filename: '[name].js',
         chunkFilename: '[id].chunk.js',
         devtoolModuleFilenameTemplate: '[resource-path]',
