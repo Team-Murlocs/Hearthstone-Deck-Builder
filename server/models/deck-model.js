@@ -7,7 +7,7 @@ const Card = require("./card-model");
 let cardSimpleSchema = new Schemma({
     cardId: { type: string },
     img: {type: string}
-})
+});
 
 let deckSchema = new Schema({
     email: { type: string },

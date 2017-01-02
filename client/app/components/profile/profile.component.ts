@@ -10,13 +10,25 @@ import { Router, Params, Route, ActivatedRoute } from "@angular/router";
 })
 
 export class ProfileComponent {
-    profile: any
+    profile: any;
 
-    constructor(private auth: Auth) {
+    decks: Deck[]
+
+
+    constructor(private auth: Auth, private deckService: DeckService) {
         this.profile = JSON.parse(localStorage.getItem('profile'));
         console.log(this.profile);
-
     }
 
-    getAllDeckForUser(email)
+    getAllDeckForUser(email) {
+        this.deckService.getAllUserDecks(email)
+            .subscribe(decks => {
+                this.decks = decks as Deck[];
+                console.log(this.decks);
+            },
+            err => {
+                console.log("Error");
+                console.log(err);
+            })
+    }
 }
