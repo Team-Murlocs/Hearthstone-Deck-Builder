@@ -23,12 +23,26 @@ module.exports = function(models) {
                 Deck.find({})
                     .exec((err, deck) => {
                         if (err) {
-                            return reject();
+                            return reject(err);
                         }
 
                         return resolve(deck);
                     });
             });
-        }
+        },
+        getDeckByUsername(email) {
+            return new Promise((resolve, reject) => {
+                Deck.find({ email })
+                    .exec((err, deck) => {
+                        if (err) {
+                            return reject(err);
+                        }
+
+                        return resolve(deck);
+                    });
+            });
+        }, 
+
+        removeDeck()
     };
 };
