@@ -11,6 +11,7 @@ let cardSimpleSchema = new Schemma({
 
 let deckSchema = new Schema({
     email: { type: string },
+    name: { type: string },
     cards: {
         type: [cardSimpleSchema]
     }

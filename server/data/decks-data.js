@@ -5,6 +5,7 @@ module.exports = function(models) {
         createDeck(email, cards = []) {
             let newDeck = new Deck ({
                 email,
+                name,
                 cards
             });
 
