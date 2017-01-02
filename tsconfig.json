@@ -6,9 +6,6 @@
         "typeRoots": [
             "./node_modules/@types"
         ],
-        "types": [
-            "core-js"
-        ],
         "emitDecoratorMetadata": true,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
