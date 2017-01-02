@@ -2,9 +2,18 @@
 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Card = require("./card-model");
+
+let cardSimpleSchema = new Schemma({
+    cardId: { type: string },
+    img: {type: string}
+})
 
 let deckSchema = new Schema({
-   // Array of cards
+    email: { type: string },
+    cards: {
+        type: [cardSimpleSchema]
+    }
 });
 
 let Deck;

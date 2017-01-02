@@ -6,14 +6,14 @@ module.exports = function(models) {
         getAllCardsFromDb() {
             return new Promise((resolve, reject) => {
                 Card.find((err, cards) => {
-                    if(err) {
+                    if (err) {
                         return reject(err)
                     }
 
                     return resolve(cards);
                 });
             });
-        },
+        },       
         getAllCards() {
 
         }
