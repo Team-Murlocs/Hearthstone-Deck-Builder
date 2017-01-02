@@ -17,6 +17,18 @@ module.exports = function(models) {
                     return resolve(newDeck);
                 });
             });
+        },
+        getAllDecks() {
+            return new Promise((resolve, reject) => {
+                Deck.find({})
+                    .exec((err, deck) => {
+                        if (err) {
+                            return reject();
+                        }
+
+                        return resolve(deck);
+                    });
+            });
         }
     };
 };
