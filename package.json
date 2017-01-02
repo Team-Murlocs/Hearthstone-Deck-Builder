@@ -87,5 +87,8 @@
     "tslint": "^4.0.2",
     "typescript": "~2.1.4",
     "typings": "^1.4.0"
+  },
+  "engines": {
+    "node": "6.9.1"
   }
 }
