@@ -8,7 +8,7 @@
     "build:prod": "webpack --config client/config/webpack.prod.js  --progress --profile --bail",
     "build": "npm run build:dev",
     "lite": "lite-server",
-    "postinstall": "typings install",
+    "postinstall": "webpack -p --config ./webpack.prod.config.js --progress",
     "server-dev": "concurrently \"npm run watch:dev\" \"nodemon server.js\"",
     "server-new-dev": "concurrently \"npm run watch:dev\" \"nodemon server.js\"",
     "server-prod": "node server.js",
