@@ -48,8 +48,6 @@ import { Auth } from "../../services/auth.service"
     width: 256px;
     margin: 0px;
     overflow: hidden;
-    -webkit-box-shadow: 5px 5px 5px #111;
-    box-shadow: 5px 5px 5px #111;
 }
 
 
