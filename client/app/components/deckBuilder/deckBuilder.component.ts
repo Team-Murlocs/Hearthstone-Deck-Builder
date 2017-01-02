@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core"
+import { Component, OnInit, Input, trigger, state, style, transition, animate } from "@angular/core"
 import { Auth } from "../../services/auth.service"
 import { Router, Params, Route, ActivatedRoute } from "@angular/router";
 import { CardService } from "../../services/card.service";
@@ -49,7 +49,19 @@ import { PaginationInstance } from "ng2-pagination";
         .mdl-list__item-primary-content {
             cursor: pointer;
         }
-    `]
+    `],
+    animations: [
+        trigger('cardInDeck', [
+            state('in', style({transform: 'translateX(0)'})),
+            transition('void => *', [
+                style({transform: 'translateX(100%)'}),
+                animate(100)
+            ]),
+            transition('* => void', [
+                animate(100, style({transform: 'translateX(-100%)'}))
+            ])
+        ])
+    ]
 })
 
 export class DeckBuilderComponent implements OnInit {
@@ -100,7 +112,7 @@ export class DeckBuilderComponent implements OnInit {
         let index = this.cardsInDeck.indexOf(search[0])
         this.cardsInDeck[index].count--
         this.cardsCount--
-        
+
         if (this.cardsInDeck[index].count == 0) {
             this.cardsInDeck.splice(index, 1)
         }

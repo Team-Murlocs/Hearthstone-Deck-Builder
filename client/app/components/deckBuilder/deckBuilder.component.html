@@ -10,7 +10,7 @@
                             <span class="mdl-list__item-primary-content"><strong>Total count:</strong></span>
                             <span><strong>{{cardsCount}}</strong></span>
                         </li>
-                        <li class="mdl-list__item" *ngFor='let cardInDeck of cardsInDeck'>
+                        <li class="mdl-list__item" *ngFor='let cardInDeck of cardsInDeck' [@cardInDeck]=cardInDeck.state>
                             <span class="mdl-list__item-primary-content" (click)="removeCardInDeck(cardInDeck.id)">
                                 {{cardInDeck.title}}
                             </span>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="mdl-cell mdl-cell--8-col">
                     <div class="mdl-grid">
-                        <div *ngFor="let card of cards | paginate: config" [attr.card]="card">
+                        <div *ngFor="let card of cards | paginate: config">
                             <div class="mdl-cell mdl-cell--2-col" (click)="addCardInDeck(card.name, card.cardId, card.rarity)">   
                                 <img src="{{card.img}}" alt="{{card.name}}"/>
                             </div>         
@@ -38,8 +38,7 @@
 
 <form action="#">
   <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="sample1">
-    <label class="mdl-textfield__label" for="sample1">Text...</label>
+    <input class="mdl-textfield__input" type="text" id="sample1" placeholder="Deck Name">
   </div>
     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="submit">
         <i class="material-icons">add</i>
