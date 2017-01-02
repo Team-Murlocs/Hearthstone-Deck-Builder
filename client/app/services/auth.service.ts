@@ -10,7 +10,7 @@ export class Auth {
   lock = new Auth0Lock("M5Bl1Zyq0Gzm6NPvMuLQz2h09KtaFPrN", "barrelrolla.eu.auth0.com", {
     allowedConnections: ["Username-Password-Authentication", "google-oauth2", "facebook"],
     rememberLastLogin: true,
-    theme: { "logo": "./../../favicon/android-icon-48x48.png", "primaryColor": "rgb(0,150,136)" },
+    theme: { "primaryColor": "rgb(0,150,136)" },
     languageDictionary: { "title": "Hearthstone Deck Builder" },
     language: "en"
   });
