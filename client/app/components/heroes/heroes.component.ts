@@ -33,6 +33,42 @@ import { Auth } from "../../services/auth.service"
         .mdl-card .mdl-layout-spacer {
             background-color: #fff
         }
+        * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+            }
+
+
+.pic {
+    border: 0px solid #fff;
+    float: left;
+    height: 129px;
+    width: 256px;
+    margin: 0px;
+    overflow: hidden;
+    -webkit-box-shadow: 5px 5px 5px #111;
+    box-shadow: 5px 5px 5px #111;
+}
+
+
+/*GROW*/
+
+.grow img {
+    height: 129px;
+    width: 256px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.grow img:hover {
+    height: 150px;
+    width: 300px;
+}
     `]
 })
 
