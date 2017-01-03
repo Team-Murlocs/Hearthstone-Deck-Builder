@@ -1,4 +1,11 @@
-import { Card } from "./card";
 export class Deck {
-    cards: Card[];
+    email: string;
+    name: string;
+    cards: any[];
+
+    constructor(email, name, cards) {
+        this.email = email
+        this.name = name
+        this.cards = cards
+    }
 }

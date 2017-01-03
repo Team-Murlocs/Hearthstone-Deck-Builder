@@ -5,8 +5,10 @@ module.exports = function(data) {
                 email
             } = req.body.email;
 
+            let name = req.body.name;
+
             let cards = req.body.cards;
-            return data.createDeck(email, cards);
+            return data.createDeck(email, name, cards);
         },
         getAllDecks(req, res) {
             return data.getAllDecks()

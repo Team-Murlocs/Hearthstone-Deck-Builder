@@ -25,7 +25,7 @@
                 <div class="mdl-cell mdl-cell--8-col">
                     <div class="mdl-grid">
                         <div *ngFor="let card of cards | paginate: config">
-                            <div class="mdl-cell mdl-cell--2-col" (click)="addCardInDeck(card.name, card.cardId, card.rarity)">   
+                            <div class="mdl-cell mdl-cell--2-col" (click)="addCardInDeck(card.name, card.cardId, card.rarity, card.img)">   
                                 <img src="{{card.img}}" alt="{{card.name}}"/>
                             </div>         
                         </div>
@@ -38,9 +38,9 @@
 
 <form action="#">
   <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="sample1" placeholder="Deck Name">
+    <input class="mdl-textfield__input" type="text" id="deckName" placeholder="Deck Name" [(ngModel)]="deckName" [ngModelOptions]="{standalone: true}">
   </div>
-    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="submit">
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" (click)="createDeck()">
         <i class="material-icons">add</i>
     </button>
 </form>

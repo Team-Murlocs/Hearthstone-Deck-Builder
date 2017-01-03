@@ -11,6 +11,11 @@ export class DeckService {
 
     private serverUrl: string = ""; // server api      
     private headersServer = new Headers({"Content-Type": "application/json"});
+    private deckByUserUrl = "/api/getAllDecks/";
+
+    private allDecksUrl = "api/getAllDecks";
+
+    private postDeckUrl = "api/addDeck";
     public options = new RequestOptions({ headers: this.headersServer});
 
     private requester: Requester<Deck>;
@@ -19,11 +24,14 @@ export class DeckService {
         this.requester = requester;
     }
 
-    postDeckToUser() {
-        // this.requester.post(serverUrl, itemToPost, options);
+    getAllUserDecks(email: string): Observable<Deck[] | Deck> {
+        return this.requester.getFromApi(`${this.deckByUserUrl}${email}`, this.options);
+    }
+    getAllDecks(): Observable<Deck[] | Deck> {
+        return this.requester.getFromApi(`${this.allDecksUrl}`, this.options);
     }
 
-    getDeckFromUser() {
-        // this.requester.get(url, options);
+    postDeck(deck: Deck): Observable<Deck[] | Deck> {
+        return this.requester.post(`${this.postDeckUrl}`, deck, this.options);
     }
 }

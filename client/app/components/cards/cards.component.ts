@@ -117,9 +117,8 @@ export class CardsComponent implements OnInit {
         this.cardService.getAllCardsByType(type)
             .subscribe(
                 cards => {
-
                     this.cards = cards as Card[];
-		    this.loading=false;        
+                    this.loading = false;
                     console.log(this.cards);
                 },
                 err => {
