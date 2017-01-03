@@ -20,4 +20,4 @@ let deckSchema = new Schema({
 let Deck;
 mongoose.model("Deck", DeckSchema);
 Deck = mongoose.model("Deck");
-module.exports = Card;
+module.exports = Deck;

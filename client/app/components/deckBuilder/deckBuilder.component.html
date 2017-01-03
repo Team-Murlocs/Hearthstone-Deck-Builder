@@ -36,14 +36,15 @@
     </div>
 </div>
 
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" (click)="createDeck()">
+    <i class="material-icons">add</i>
+</button>
 <form action="#">
   <div class="mdl-textfield mdl-js-textfield">
     <input class="mdl-textfield__input" type="text" id="deckName" placeholder="Deck Name" [(ngModel)]="deckName" [ngModelOptions]="{standalone: true}">
   </div>
-    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" (click)="createDeck()">
-        <i class="material-icons">add</i>
-    </button>
 </form>
+
 
 <div class="has-text-centered">
     <pagination-controls [id]="config.id"

@@ -13,9 +13,9 @@ export class DeckService {
     private headersServer = new Headers({"Content-Type": "application/json"});
     private deckByUserUrl = "/api/getAllDecks/";
 
-    private allDecksUrl = "api/getAllDecks";
+    private allDecksUrl = "/api/getAllDecks";
 
-    private postDeckUrl = "api/addDeck";
+    private postDeckUrl = "/api/addDeck";
     public options = new RequestOptions({ headers: this.headersServer});
 
     private requester: Requester<Deck>;

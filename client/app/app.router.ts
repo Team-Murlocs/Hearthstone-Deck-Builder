@@ -13,6 +13,7 @@ const appRoutes = [
     { path: "cards/:number/:name", component: Components.CardInfoComponent },
     { path: "heroes/cards/:class", component: Components.DeckBuilderComponent },
     { path: "decks", component: Components.DecksComponent },
+    { path: "deck/:name", component: Components.DeckViewer },
     { path: "unauthorized", component: Components.UnauthorizedComponent },
     { path: "**", component: Components.NotFoundComponent }
 ];

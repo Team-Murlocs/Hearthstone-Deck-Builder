@@ -26,8 +26,10 @@ export class Requester<T> {
     }
 
     public post(url: string, item: any, options: RequestOptions): Observable<T> {
-        return this.http
-            .post(url, item, options)
-            .map(res => res.json());
+        return this.http.post(url, JSON.stringify(item), options)
+            .map((res: Response) => {
+                console.log(res)
+                return res.json()
+            });
     }
 }

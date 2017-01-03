@@ -26,6 +26,7 @@ import { DeckService } from "./services/deck.service";
         Components.DecksComponent,
         Components.CardInfoComponent,
         Components.DeckBuilderComponent,
+        Components.DeckViewer,
         Components.UnauthorizedComponent
         ], // declare all derectives and components
     bootstrap: [Components.AppComponent], // root component to bootstarp

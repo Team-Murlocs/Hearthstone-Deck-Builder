@@ -50,6 +50,12 @@ import { DeckService } from "./../../services/deck.service"
         }
         .mdl-list__item-primary-content {
             cursor: pointer;
+        }        
+        .mdl-button {
+            float: right;
+        }
+        .mdl-textfield {
+            float: right;
         }
     `],
     animations: [
@@ -126,7 +132,7 @@ export class DeckBuilderComponent implements OnInit {
 
     cardClass: string;
 
-    constructor(private cardService: CardService, private deckService: DeckService, private route: ActivatedRoute) {
+    constructor(private cardService: CardService, private deckService: DeckService, private route: ActivatedRoute, private router: Router) {
         this.profile = JSON.parse(localStorage.getItem('profile'));
     }
 
@@ -163,6 +169,12 @@ export class DeckBuilderComponent implements OnInit {
     createDeck() {
         let deck = new Deck(this.profile.email, this.deckName, this.cardsInDeck)
         console.log(deck)
-        this.deckService.postDeck(deck)
+        this.deckService.postDeck(deck).subscribe(
+            success => {
+                this.router.navigate(['/deck', this.deckName])
+            },
+            error => {
+                console.log(error)
+            })
     }
 }

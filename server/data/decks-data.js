@@ -2,7 +2,7 @@
 module.exports = function(models) {
     let { Deck } = models;
     return {
-        createDeck(email, cards = []) {
+        createDeck(email, name, cards = []) {
             let newDeck = new Deck ({
                 email,
                 name,
@@ -10,6 +10,8 @@ module.exports = function(models) {
             });
 
             return new Promise((reoslve, reject) => {
+                console.log("calling data")
+                console.log(newDeck)
                 newDeck.save((err) => {
                     if (err) {
                         return reject(error);
