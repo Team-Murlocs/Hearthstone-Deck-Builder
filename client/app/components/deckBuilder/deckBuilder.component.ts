@@ -163,6 +163,6 @@ export class DeckBuilderComponent implements OnInit {
     createDeck() {
         let deck = new Deck(this.profile.email, this.deckName, this.cardsInDeck)
         console.log(deck)
-        //this.deckService.postDeck()
+        this.deckService.postDeck(deck)
     }
 }

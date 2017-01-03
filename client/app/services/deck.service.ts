@@ -26,7 +26,7 @@ export class DeckService {
         return this.requester.getFromApi(`${this.deckByUserUrl}${email}`, this.options);
     }
 
-    postDeck(deck: Deck[]): Observable<Deck[] | Deck> {
-        return this.requester.post(`${this.postDeckUrl}`,deck, this.options);
+    postDeck(deck: any): Observable<Deck[] | Deck> {
+        return this.requester.post(`${this.postDeckUrl}`, deck, this.options);
     }
 }
