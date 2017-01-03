@@ -9,7 +9,7 @@ module.exports = function(models) {
                 cards
             });
 
-            return new Promise((reoslve, reject) => {
+            return new Promise((resolve, reject) => {
                 console.log("calling data")
                 console.log(newDeck)
                 newDeck.save((err) => {
@@ -33,7 +33,7 @@ module.exports = function(models) {
                     });
             });
         },
-        getDeckByUsername(email) {
+        getDeckByEmail(email) {
             return new Promise((resolve, reject) => {
                 Deck.find({ email })
                     .exec((err, deck) => {

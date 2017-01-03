@@ -9,7 +9,9 @@ module.exports = (app, config) => {
     // app.use("/", indexRouter)
     // app.use("/heroes", heroesRouter)
 
-    const data = require("../data")({});
+    let Deck = require("../models/deck-model");
+
+    const data = require("../data")({ Deck });
     const controllers = require("../controllers")(data);
 
     require("../routers")(app, controllers);
