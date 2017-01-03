@@ -16,7 +16,6 @@ export class ProfileComponent implements OnInit {
 
     constructor(private auth: Auth, private deckService: DeckService) {
         this.profile = JSON.parse(localStorage.getItem('profile'));
-        console.log(this.profile);
     }
 
     ngOnInit() {

@@ -1,9 +1,11 @@
 import { Component, OnInit, Input, trigger, state, style, transition, animate } from "@angular/core"
 import { Auth } from "../../services/auth.service"
-import { Router, Params, Route, ActivatedRoute } from "@angular/router";
-import { CardService } from "../../services/card.service";
-import { Card } from "../../models/card";
-import { PaginationInstance } from "ng2-pagination";
+import { Router, Params, Route, ActivatedRoute } from "@angular/router"
+import { CardService } from "../../services/card.service"
+import { Card } from "../../models/card"
+import { PaginationInstance } from "ng2-pagination"
+import { Deck } from "./../../models/deck"
+import { DeckService } from "./../../services/deck.service"
 
 @Component({
     selector: "cardsByClass",
@@ -81,10 +83,12 @@ export class DeckBuilderComponent implements OnInit {
     };
     //
 
+    profile: any    
+    deckName = ""
     @Input() cardsInDeck = []
     cardsCount = 0
 
-    addCardInDeck(cardTitle, cardId, rarity) {
+    addCardInDeck(cardTitle, cardId, rarity, image) {
         let search = this.cardsInDeck.filter(function (card) {
             return card.id == cardId;
         });
@@ -97,7 +101,7 @@ export class DeckBuilderComponent implements OnInit {
                     this.cardsCount++
                 }
             } else {
-                let card = { title: cardTitle, rarity: rarity, id: cardId, count: 1 }
+                let card = { title: cardTitle, img: image, rarity: rarity, id: cardId, count: 1 }
                 this.cardsInDeck.push(card)
                 this.cardsCount++
             }
@@ -122,7 +126,8 @@ export class DeckBuilderComponent implements OnInit {
 
     cardClass: string;
 
-    constructor(private cardService: CardService, private route: ActivatedRoute) {
+    constructor(private cardService: CardService, private deckService: DeckService, private route: ActivatedRoute) {
+        this.profile = JSON.parse(localStorage.getItem('profile'));
     }
 
     ngOnInit() {
@@ -140,18 +145,24 @@ export class DeckBuilderComponent implements OnInit {
     showCardByClass(playerClass) {
         this.cardService.getCardByClass(playerClass)
             .subscribe(
-            cards => {
-                this.cards = cards as Card[];
-                this.cardService.getCardByClass("Neutral")
-                    .subscribe(
-                    neutralCards => {
-                        this.cards = this.cards.concat(neutralCards)
-                    }
-                    )
-            },
-            err => {
-                console.log(err);
+                cards => {
+                    this.cards = cards as Card[];
+                    this.cardService.getCardByClass("Neutral")
+                        .subscribe(
+                            neutralCards => {
+                                this.cards = this.cards.concat(neutralCards)
+                            }
+                        )
+                },
+                err => {
+                    console.log(err);
             }
-            )
+        )
+    }
+
+    createDeck() {
+        let deck = new Deck(this.profile.email, this.deckName, this.cardsInDeck)
+        console.log(deck)
+        //this.deckService.postDeck()
     }
 }
