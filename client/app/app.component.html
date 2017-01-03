@@ -38,9 +38,9 @@
     <span class="mdl-layout-title">Quick Menu</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/">Home</a>
-      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/heroes">Heroes</a>
       <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/cards">Cards</a>
-      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/decks">Decks</a>           
+      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/decks">Decks</a>
+      <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/heroes" *ngIf="auth.authenticated()">Build a deck</a>
       <a class="mdl-navigation__link" (click)="hideSidebar()" routerLink="/profile" *ngIf="auth.authenticated()">Profile</a>
       <hr>
       <button class="mdl-button mdl-js-button" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</button>
