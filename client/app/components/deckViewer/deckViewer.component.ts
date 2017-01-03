@@ -9,6 +9,7 @@ import 'rxjs/add/operator/switchMap'
 
 export class DeckViewer {
     deckName: any
+    deck: []
 
     constructor (private route: ActivatedRoute, private router: Router) {
 
