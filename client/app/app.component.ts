@@ -6,6 +6,7 @@ import { Auth } from './services/auth.service'
     styles: [`
         #demo-menu-lower-left { cursor: pointer; }
         .mdl-layout-title { cursor: pointer; }
+        a {color: grey}
     `]
 })
 export class AppComponent {
