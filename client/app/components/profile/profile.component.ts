@@ -14,7 +14,6 @@ export class ProfileComponent {
 
     constructor(private auth: Auth) {
         this.profile = JSON.parse(localStorage.getItem('profile'));
-        console.log(this.profile);
 
     }
 
